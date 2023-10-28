@@ -124,7 +124,7 @@ contract QuestController_AutoAccept is Ownable, Pausable, EIP712 {
         uint256 questId = proposals[proposalId].questId;
         uint256 orgId = quests[questId].orgId;
         if (organizationController.adminOf(orgId) != msg.sender)
-            revert Unauthorized();
+            // revert Unauthorized();
         _;
     }
 
@@ -145,7 +145,6 @@ contract QuestController_AutoAccept is Ownable, Pausable, EIP712 {
         uint256 reward,
         uint256 orgId,
         uint256 deadline,
-        bytes calldata signature,
         uint256 nonce
     ) public payable whenNotPaused {
         if (nonceUsed[nonce]) revert InvalidNonce();
@@ -155,22 +154,7 @@ contract QuestController_AutoAccept is Ownable, Pausable, EIP712 {
             revert Unauthorized();
         if (deadline <= block.timestamp) revert DeadlineAlreadyPassed();
         if (msg.value != reward) revert InvalidValue();
-        bytes32 digest = _hashTypedDataV4(
-            keccak256(
-                abi.encode(
-                    keccak256(
-                        "CreateQuest(uint256 orgId,bytes questCID,uint256 reward,uint256 deadline,uint256 nonce)"
-                    ),
-                    orgId,
-                    keccak256(questCID),
-                    reward,
-                    deadline,
-                    nonce
-                )
-            )
-        );
-        address _signer = digest.recover(signature);
-        if (_signer != signer) revert InvalidSignature();
+
         nonceUsed[nonce] = true;
 
         // TODO: Also verify the cid
@@ -190,32 +174,32 @@ contract QuestController_AutoAccept is Ownable, Pausable, EIP712 {
     function sendProposal(
         uint256 questId,
         bytes calldata proposalCID,
-        bytes calldata signature,
+        // bytes calldata signature,
         uint256 nonce
     ) public {
         if (nonceUsed[nonce]) revert InvalidNonce();
         if (!questExists(questId)) revert InvalidQuestId();
         if (proposalIds[questId][msg.sender] != 0) revert ProposalAlreadySent();
         if (statusOfQuest(questId) != QuestStatus.Open) revert QuestNotOpen();
-        if (organizationController.adminOf(quests[questId].orgId) == msg.sender)
-            revert OrganizationAdminCannotApply();
+        // if (organizationController.adminOf(quests[questId].orgId) == msg.sender)
+        //     revert OrganizationAdminCannotApply();
 
-        // verify the signature
-        bytes32 digest = _hashTypedDataV4(
-            keccak256(
-                abi.encode(
-                    keccak256(
-                        "SendProposal(uint256 questId,address proposer,bytes proposalCID,uint256 nonce)"
-                    ),
-                    questId,
-                    msg.sender,
-                    keccak256(proposalCID),
-                    nonce
-                )
-            )
-        );
-        address _signer = digest.recover(signature);
-        if (_signer != signer) revert InvalidSignature();
+        // // verify the signature
+        // bytes32 digest = _hashTypedDataV4(
+        //     keccak256(
+        //         abi.encode(
+        //             keccak256(
+        //                 "SendProposal(uint256 questId,address proposer,bytes proposalCID,uint256 nonce)"
+        //             ),
+        //             questId,
+        //             msg.sender,
+        //             keccak256(proposalCID),
+        //             nonce
+        //         )
+        //     )
+        // );
+        // address _signer = digest.recover(signature);
+        // if (_signer != signer) revert InvalidSignature();
         nonceUsed[nonce] = true;
 
         // TODO: verify the cid
@@ -238,7 +222,7 @@ contract QuestController_AutoAccept is Ownable, Pausable, EIP712 {
     function submitWork(
         uint256 questId,
         bytes calldata workCID,
-        bytes calldata signature,
+        // bytes calldata signature,
         uint256 nonce
     ) public {
         if (nonceUsed[nonce]) revert InvalidNonce();
@@ -253,21 +237,21 @@ contract QuestController_AutoAccept is Ownable, Pausable, EIP712 {
             revert WorkAlreadySubmitted();
 
         // verify the signature
-        bytes32 digest = _hashTypedDataV4(
-            keccak256(
-                abi.encode(
-                    keccak256(
-                        "SubmitWork(uint256 questId,address proposer,bytes workCID,uint256 nonce)"
-                    ),
-                    questId,
-                    msg.sender,
-                    keccak256(workCID),
-                    nonce
-                )
-            )
-        );
-        address _signer = digest.recover(signature);
-        if (_signer != signer) revert InvalidSignature();
+        // bytes32 digest = _hashTypedDataV4(
+        //     keccak256(
+        //         abi.encode(
+        //             keccak256(
+        //                 "SubmitWork(uint256 questId,address proposer,bytes workCID,uint256 nonce)"
+        //             ),
+        //             questId,
+        //             msg.sender,
+        //             keccak256(workCID),
+        //             nonce
+        //         )
+        //     )
+        // );
+        // address _signer = digest.recover(signature);
+        // if (_signer != signer) revert InvalidSignature();
         nonceUsed[nonce] = true;
 
         // TODO: check the cid

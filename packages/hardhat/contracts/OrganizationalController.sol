@@ -78,28 +78,12 @@ contract OrganizationController is Ownable, Pausable, EIP712 {
     function createOrganization(
         string calldata name,
         bytes calldata imageCID,
-        bytes calldata signature,
         uint256 nonce
     ) public whenNotPaused {
         if (nonceUsed[nonce]) revert InvalidNonce();
         if (organizationIds[msg.sender] != 0)
             revert OrganizationsPerAddressLimitReached();
 
-        bytes32 digest = _hashTypedDataV4(
-            keccak256(
-                abi.encode(
-                    keccak256(
-                        "CreateOrganization(address admin,string name,bytes imageCID,uint256 nonce)"
-                    ),
-                    msg.sender,
-                    keccak256(bytes(name)),
-                    keccak256(imageCID),
-                    nonce
-                )
-            )
-        );
-        address _signer = digest.recover(signature);
-        if (_signer != signer) revert InvalidSignature();
         nonceUsed[nonce] = true;
 
         uint256 orgId = ++totalOrganizations;

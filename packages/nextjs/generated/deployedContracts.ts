@@ -2541,7 +2541,7 @@ const contracts = {
           ],
         },
         OrganizationController: {
-          address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+          address: "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
           abi: [
             {
               inputs: [],
@@ -2776,11 +2776,6 @@ const contracts = {
                 {
                   internalType: "bytes",
                   name: "imageCID",
-                  type: "bytes",
-                },
-                {
-                  internalType: "bytes",
-                  name: "signature",
                   type: "bytes",
                 },
                 {
@@ -3033,7 +3028,7 @@ const contracts = {
           ],
         },
         QuestController_AutoAccept: {
-          address: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+          address: "0x4ed7c70F96B99c776995fB64377f0d4aB3B0e1C1",
           abi: [
             {
               inputs: [
@@ -3421,11 +3416,6 @@ const contracts = {
                   type: "uint256",
                 },
                 {
-                  internalType: "bytes",
-                  name: "signature",
-                  type: "bytes",
-                },
-                {
                   internalType: "uint256",
                   name: "nonce",
                   type: "uint256",
@@ -3698,11 +3688,6 @@ const contracts = {
                   type: "bytes",
                 },
                 {
-                  internalType: "bytes",
-                  name: "signature",
-                  type: "bytes",
-                },
-                {
                   internalType: "uint256",
                   name: "nonce",
                   type: "uint256",
@@ -3768,11 +3753,6 @@ const contracts = {
                 {
                   internalType: "bytes",
                   name: "workCID",
-                  type: "bytes",
-                },
-                {
-                  internalType: "bytes",
-                  name: "signature",
                   type: "bytes",
                 },
                 {
