@@ -20,7 +20,7 @@ const deployQuestController: DeployFunction = async function (hre: HardhatRuntim
   });
 
   // Use the addresses of the deployed contracts in the QuestController deployment
-  await deploy("QuestController", {
+  await deploy("QuestController_AutoAccept", {
     from: deployer,
     args: [
       organizationController.address,
