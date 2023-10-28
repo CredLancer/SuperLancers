@@ -2541,7 +2541,7 @@ const contracts = {
           ],
         },
         GigMarketplace: {
-          address: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+          address: "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e",
           abi: [
             {
               inputs: [],
@@ -2732,6 +2732,56 @@ const contracts = {
               name: "createGig",
               outputs: [],
               stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "getAllAvailableGigs",
+              outputs: [
+                {
+                  components: [
+                    {
+                      internalType: "uint256",
+                      name: "id",
+                      type: "uint256",
+                    },
+                    {
+                      internalType: "address",
+                      name: "creator",
+                      type: "address",
+                    },
+                    {
+                      internalType: "address",
+                      name: "freelancer",
+                      type: "address",
+                    },
+                    {
+                      internalType: "string",
+                      name: "title",
+                      type: "string",
+                    },
+                    {
+                      internalType: "string",
+                      name: "description",
+                      type: "string",
+                    },
+                    {
+                      internalType: "uint256",
+                      name: "reward",
+                      type: "uint256",
+                    },
+                    {
+                      internalType: "enum GigMarketplace.GigStatus",
+                      name: "status",
+                      type: "uint8",
+                    },
+                  ],
+                  internalType: "struct GigMarketplace.Gig[]",
+                  name: "",
+                  type: "tuple[]",
+                },
+              ],
+              stateMutability: "view",
               type: "function",
             },
             {
