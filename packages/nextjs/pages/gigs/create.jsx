@@ -1,9 +1,9 @@
 import Link from "next/link";
-import type { NextPage } from "next";
+import { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
 import { GigListing } from "~~/components/GigListing";
 
-const Home: NextPage = () => {
+const CreateGig = () => {
   const gigs = [{
     id: 1,
     title: "Create Figma Designs for Web Applications",
@@ -32,16 +32,14 @@ const Home: NextPage = () => {
       <MetaHeader />
       <div className="container mx-auto mt-10">
         <div className=" flex justify-between items-center">
-          <div className="text-3xl font-bold">Find a Gig</div>
-          <Link href="/gigs/create">
-            <div className="button bg-black text-white hover:opacity-50 p-3 w-fit px-10 rounded">Create New Gig</div>
-          </Link>
+          <div className="text-3xl font-bold">Create a New Gig</div>
+          {/* <div className="button bg-black text-white hover:opacity-50 p-3 w-fit px-10 rounded">Back to All Gigs</div> */}
         </div>
         <br />
-        {gigs.map((g, i) => <GigListing {...g} key={i} />)}
+        {/* {gigs.map((g, i) => <GigListing {...g} key={i} />)} */}
       </div>
     </>
   );
 };
 
-export default Home;
+export default CreateGig;

@@ -11,7 +11,7 @@ export const GigListing = ({
 }) => {
   return (
     <Link href={`/gigs/${id}`}>
-      <div className="w-100 bg-neutral-200 rounded p-10 mt-4 hover:opacity-50 hover:cursor-pointer flex justify-between border-2 border-black">
+      <div className="w-100 bg-neutral-100 rounded p-10 mt-4 hover:opacity-50 hover:cursor-pointer flex justify-between border-2 border-black">
         <div className="flex justify-center flex-col w-1/2">
           <div className="font-bold text-xl">{title}</div>
           <div className="">{description}</div>
