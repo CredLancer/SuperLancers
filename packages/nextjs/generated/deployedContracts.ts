@@ -2540,8 +2540,375 @@ const contracts = {
             },
           ],
         },
+        GigMarketplace: {
+          address: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+          abi: [
+            {
+              inputs: [],
+              name: "InvalidGigId",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "InvalidStatusTransition",
+              type: "error",
+            },
+            {
+              inputs: [],
+              name: "NotGigCreator",
+              type: "error",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "uint256",
+                  name: "gigId",
+                  type: "uint256",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "freelancer",
+                  type: "address",
+                },
+              ],
+              name: "GigAccepted",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "uint256",
+                  name: "gigId",
+                  type: "uint256",
+                },
+              ],
+              name: "GigApproved",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "uint256",
+                  name: "gigId",
+                  type: "uint256",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "creator",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "string",
+                  name: "title",
+                  type: "string",
+                },
+                {
+                  indexed: false,
+                  internalType: "string",
+                  name: "description",
+                  type: "string",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "reward",
+                  type: "uint256",
+                },
+              ],
+              name: "GigCreated",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "uint256",
+                  name: "gigId",
+                  type: "uint256",
+                },
+              ],
+              name: "GigFinished",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "previousOwner",
+                  type: "address",
+                },
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "newOwner",
+                  type: "address",
+                },
+              ],
+              name: "OwnershipTransferred",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: false,
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+              ],
+              name: "Paused",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: false,
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+              ],
+              name: "Unpaused",
+              type: "event",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "gigId",
+                  type: "uint256",
+                },
+              ],
+              name: "approveGig",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "gigId",
+                  type: "uint256",
+                },
+              ],
+              name: "claimAndStartGig",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "string",
+                  name: "title",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "description",
+                  type: "string",
+                },
+                {
+                  internalType: "uint256",
+                  name: "reward",
+                  type: "uint256",
+                },
+              ],
+              name: "createGig",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              name: "gigs",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "id",
+                  type: "uint256",
+                },
+                {
+                  internalType: "address",
+                  name: "creator",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "freelancer",
+                  type: "address",
+                },
+                {
+                  internalType: "string",
+                  name: "title",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "description",
+                  type: "string",
+                },
+                {
+                  internalType: "uint256",
+                  name: "reward",
+                  type: "uint256",
+                },
+                {
+                  internalType: "enum GigMarketplace.GigStatus",
+                  name: "status",
+                  type: "uint8",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "listGigs",
+              outputs: [
+                {
+                  components: [
+                    {
+                      internalType: "uint256",
+                      name: "id",
+                      type: "uint256",
+                    },
+                    {
+                      internalType: "address",
+                      name: "creator",
+                      type: "address",
+                    },
+                    {
+                      internalType: "address",
+                      name: "freelancer",
+                      type: "address",
+                    },
+                    {
+                      internalType: "string",
+                      name: "title",
+                      type: "string",
+                    },
+                    {
+                      internalType: "string",
+                      name: "description",
+                      type: "string",
+                    },
+                    {
+                      internalType: "uint256",
+                      name: "reward",
+                      type: "uint256",
+                    },
+                    {
+                      internalType: "enum GigMarketplace.GigStatus",
+                      name: "status",
+                      type: "uint8",
+                    },
+                  ],
+                  internalType: "struct GigMarketplace.Gig[]",
+                  name: "",
+                  type: "tuple[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "gigId",
+                  type: "uint256",
+                },
+              ],
+              name: "markGigAsFinished",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "owner",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "paused",
+              outputs: [
+                {
+                  internalType: "bool",
+                  name: "",
+                  type: "bool",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "renounceOwnership",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "totalGigs",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "newOwner",
+                  type: "address",
+                },
+              ],
+              name: "transferOwnership",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+          ],
+        },
         OrganizationController: {
-          address: "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+          address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
           abi: [
             {
               inputs: [],
@@ -3028,7 +3395,7 @@ const contracts = {
           ],
         },
         QuestController_AutoAccept: {
-          address: "0x4ed7c70F96B99c776995fB64377f0d4aB3B0e1C1",
+          address: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
           abi: [
             {
               inputs: [
