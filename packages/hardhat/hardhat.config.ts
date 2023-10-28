@@ -122,6 +122,26 @@ const config: HardhatUserConfig = {
       url: "https://rpc.scroll.io",
       accounts: [deployerPrivateKey],
     },
+    coston: {
+      url: "https://coston-api.flare.network/ext/bc/C/rpc",
+      accounts: [deployerPrivateKey],
+      chainId: 16
+    },
+    coston2: {
+      url: "https://coston2-api.flare.network/ext/C/rpc",
+      accounts: [deployerPrivateKey],
+      chainId: 114
+    },
+    songbird: {
+      url: "https://songbird-api.flare.network/ext/bc/C/rpc",
+      accounts: [deployerPrivateKey],
+      chainId: 19
+    },
+    flare: {
+      url: "https://flare-api.flare.network/ext/C/rpc",
+      accounts: [deployerPrivateKey],
+      chainId: 14,
+    },
   },
   verify: {
     etherscan: {
