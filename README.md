@@ -30,7 +30,7 @@ These features work cohesively to redefine the future of on-chain work environme
 ## Technology:
 Using Aztec's sandbox so that we could easily interact with our Solidity smart contract using Noir. We created additional user flow for private payments, this way freelancers can opt out of receiving escrow from open work contracts and instead return them to organizations. Then, they can issue private invoices using Aztec Token Bridge and effectively shield transactions and ensure their privacy. Privacy is critical especially in enterprise use cases, not only for payments, but also for credentials for private companies.
 
-## Project structure
+## TODO: Project structure
 - `credLancer_cross_chain` has the contracts for :
   - Cross-chain transactions using chainlink CCIP.
   - Polygon ID's Verifiable Credentials
@@ -52,6 +52,7 @@ Public and Private payment methods
 
   
 #### How it works
+TODO:
 1. 
     1. A Freelancer creates an ID using **TalentLayerID, we hope to integrate ENS** 
     2. Both Organizations and Freelancers will have a **Railgun** wallet to preserve privacy of transactions
@@ -63,7 +64,7 @@ Public and Private payment methods
     8. Now the Org and I can give a vote to eachother using **Semaphore Protocol**.
 
 ### Public methods
- Public payments are made through on-chain contracts with cross-chain functionality. 
+ Public payments are made through on-chain contracts. 
 #### How it works
 
 1. Freelancer signs up and writes a basic description and skills list to attract potential clients. There is no credentials on his/her profile yet, because it will only be filled through NFTs issued by verified organizations.
