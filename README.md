@@ -49,19 +49,6 @@ Public and Private payment methods
 - Need for efficient matching and discovery without compromising privacy
 - Inadequate security and privacy in payment infrastructure
 
-
-
-#### How it works
-1.
-    1. A Freelancer creates an ID using **TalentLayerID, we hope to integrate ENS**
-    2. Both Organizations and Freelancers will have a **Railgun** wallet to preserve privacy of transactions
-    3. On the Quest Board publically available quests are displayed.
-    4. To show interest for a Quest, Alice initiates the **Waku** chat to privately negotiate with the Org who added it… ******************************************type time availability & price expectation******************************************
-    5. The Org saw my onchain reputation, which came from our **Subgraph (The Graph)**, so they approved me for this Quest. Now the escrow is funded via a **Railgun** private transaction and I can see the Quest in my Dashboard
-    6. Once I’m done, I mark the Quest as complete, which sends a **Railgun** encrypted invoice to the Org via **Request Network**
-    7. The Org will now check my work and hopefully approve using **Request Network**. Ok, it’s been approved, which triggers an Experience Credential (EC) for project completion.
-    8. Now the Org and I can give a vote to eachother using **Semaphore Protocol**.
-
 ### Public methods
  Public payments are made through on-chain contracts.
 #### How it works
