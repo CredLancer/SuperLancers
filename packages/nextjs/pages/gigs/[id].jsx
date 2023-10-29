@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/router'
 import { MetaHeader } from "~~/components/MetaHeader";
 import { useScaffoldContractWrite } from "~~/hooks/scaffold-eth/useScaffoldContractWrite";
@@ -6,6 +7,7 @@ import { useScaffoldContractRead } from "~~/hooks/scaffold-eth/useScaffoldContra
 
 const GigPage = () => {
   const router = useRouter();
+  const [functionName, setFunctionName] = useState("")
 
   const { data: gig } = useScaffoldContractRead({
     contractName: "GigMarketplace",
@@ -15,27 +17,69 @@ const GigPage = () => {
 
   console.log({ gig })
 
-  const states = ["Available", "Accepted", "Finsihed", "Approved"]
-
+  const states = ["Available", "In Progress", "Finished", "Approved"]
+  const statecolor = ["black", "orange", "red", "green"]
 
   const { writeAsync, isLoading, isMining } = useScaffoldContractWrite({
     contractName: "GigMarketplace",
-    functionName: "claimAndStartGig",
+    functionName: functionName,
     blockConfirmations: 1,
+    args: [router.query.id],
     onBlockConfirmation: txnReceipt => {
       console.log("Transaction blockHash", txnReceipt.blockHash);
     },
   });
 
-  // const gig = {
-  //   title: "Create Figma Designs for Web Applications",
-  //   description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
-  //   reward: "5 ETH",
-  //   timeline: "2 weeks",
-  //   client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
-  // };
+  useEffect(() => {
+    if (!gig) return;
+
+    if (gig.status === 0)
+      setFunctionName("claimAndStartGig")
+
+    if (gig.status === 1)
+      setFunctionName("markGigAsFinished")
+
+    if (gig.status === 2)
+      setFunctionName("approveGig")
+
+  }, [gig]);
 
   if (!gig) return <></>
+
+  const freelancerActions = (
+    <>
+      {
+        gig.status === 0 &&
+        <div className="button bg-black text-white hover:opacity-50 p-3 w-fit px-10 rounded" onClick={writeAsync}>Claim & Start Gig</div>
+      }
+      {
+        gig.status === 1 &&
+        <div className="button bg-black text-white hover:opacity-50 p-3 w-fit px-10 rounded" onClick={writeAsync}>Mark Gig as Completed</div>
+      }
+      {
+        gig.status === 2 &&
+        (
+          <>
+            <div className="mb-3">You've marked this gig as complete, please wait for the gig owner to approve your work.</div>
+          </>
+        )
+      }
+    </>
+  );
+
+  const ownerActions = (
+    <>
+      {
+        gig.status === 2 &&
+        (
+          <>
+            <div className="mb-3"></div>
+            <div className="button bg-green-600 text-white hover:opacity-50 p-3 w-fit px-10 rounded" onClick={writeAsync}>Approve Work</div>
+          </>
+        )
+      }
+    </>
+  );
 
   return (
     <>
@@ -45,13 +89,13 @@ const GigPage = () => {
           <div className="flex justify-center flex-col w-2/3">
             <div className="font-bold text-3xl mb-2">{gig.title}</div>
             <div className="font-medium">{gig.description}</div>
-            <div className="text-sm pt-5"><span className="font-medium">Gig posted by:</span> {gig.client}</div>
-            <div className="text-sm pt-1"><span className="font-medium">Freelancer assigned:</span> N/A</div>
+            <div className="text-sm pt-5"><span className="font-medium">Gig posted by:</span> {gig.creator}</div>
+            <div className="text-sm pt-1"><span className="font-medium">Freelancer assigned:</span> {gig.freelancer}</div>
             <div className="tracking-widest font-medium text-sm"></div>
           </div>
           <div className="flex items-center">
             <div className="flex flex-col items-center mx-10">
-              <div className="text-2xl font-bold">{states[gig.status]}</div>
+              <div className={`text-2xl font-bold`} style={{ color: `dark${statecolor[gig.status]}` }}> {states[gig.status]}</div>
               <div className="tracking-widest font-medium text-sm">STATUS</div>
             </div>
             <div className="flex flex-col items-center mx-10">
@@ -66,12 +110,19 @@ const GigPage = () => {
         </div>
         <hr className="my-10" />
         <div className="w-100 text-center flex flex-col items-center">
-          <div className="button bg-black text-white hover:opacity-50 p-3 w-fit px-10 rounded" onClick={writeAsync}>Claim & Start Gig</div>
+          {
+            (isLoading || isMining) ? <>Loading...</> : (
+              <>
+                {gig.freelancer && freelancerActions}
+                {gig.creator && ownerActions}
+              </>
+            )
+          }
           <Link href="/">
             <div className="mt-5 text-neutral-500 hover:text-black underline">Back to all Gigs</div>
           </Link>
         </div>
-      </div>
+      </div >
     </>
   );
 };

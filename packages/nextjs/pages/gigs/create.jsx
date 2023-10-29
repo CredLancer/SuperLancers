@@ -51,7 +51,7 @@ const CreateGig = () => {
             <input onChange={(e) => setTimeline(e.target.value)} value={timeline} id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 " required placeholder="2 months" />
           </div>
           <div className="mb-5">
-            <label for="password" className="block mb-2 text-sm font-medium text-gray-900">Gig Reward in ETH</label>
+            <label for="password" className="block mb-2 text-sm font-medium text-gray-900">Gig Reward in FLR</label>
             <input onChange={(e) => setReward(e.target.value)} value={reward} id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 " required placeholder="1" />
           </div>
           {

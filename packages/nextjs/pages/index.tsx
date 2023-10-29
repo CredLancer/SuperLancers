@@ -33,6 +33,10 @@ const Home: NextPage = () => {
   //   client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
   // }];
 
+  const gigListingComponents = gigsList && gigsList.sort((a, b) => a.status - b.status).map((g, i) => <GigListing {...g} key={i} />);
+
+  console.log({ gigsList })
+
   return (
     <>
       <MetaHeader />
@@ -45,7 +49,8 @@ const Home: NextPage = () => {
         </div>
         <br />
         {(!gigsList || gigsList.length === 0) && <>No gigs are currently available</>}
-        {(gigsList || []).map((g, i) => <GigListing {...g} key={i} />)}
+        {gigListingComponents}
+        <br />
       </div>
     </>
   );
