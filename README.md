@@ -19,7 +19,15 @@ Discovering talent online and finding the right person to do a task for you is n
 
 The existing prominent gig marketplaces are centralized, which could lead to concerns surrounding the public disclosure of one's income and personal information. SuperLancersZK addresses and resolves this particular challenge by offering a decentralised gig marketplace.
 
-## Key Features:
+## Key Features built at ETH London:
+
+- Seamless cross-chain payments for ease of transactions, view code [here](https://github.com/CredLancer/LancersZK/blob/a6cf975a12f75c151ea4626f1f3e185f5b347a0a/credLancer_cross_chain/src/cross-chain/QuestControllerSender.sol) and [here](https://github.com/CredLancer/LancersZK/blob/e61c46fadfd2a8b454fd4012abd79f2df1e81f0f/credLancer_cross_chain/src/QuestController.sol#L203) .
+- A digital reputation framework ensuring privacy in payments, invoicing, and encouraging anonymous feedback. view code[here](https://github.com/CredLancer/LancersZK/blob/58d28bd6e9bff95a5f9e95e0938aa91f52a40f49/Credlancer_Privacy/packages/hardhat/scripts/request) 
+- Self-sovereign identities and verifiable credentials, utilizing Polygon's zkEVM and Polygon ID for decentralized NFT credential minting. view Code [here](https://github.com/CredLancer/LancersZK/blob/3150c3fa94b0fe67e8dde20c7eee955e998e91aa/credLancer_cross_chain/src/identity)
+  
+These features work cohesively to redefine the future of on-chain work environments.'
+
+## Other Key Features:
 
 - Seamless cross-chain payments for ease of transactions, view code [here](https://github.com/CredLancer/LancersZK/blob/a6cf975a12f75c151ea4626f1f3e185f5b347a0a/credLancer_cross_chain/src/cross-chain/QuestControllerSender.sol) and [here](https://github.com/CredLancer/LancersZK/blob/e61c46fadfd2a8b454fd4012abd79f2df1e81f0f/credLancer_cross_chain/src/QuestController.sol#L203) .
 - A digital reputation framework ensuring privacy in payments, invoicing, and encouraging anonymous feedback. view code[here](https://github.com/CredLancer/LancersZK/blob/58d28bd6e9bff95a5f9e95e0938aa91f52a40f49/Credlancer_Privacy/packages/hardhat/scripts/request) 
@@ -29,15 +37,6 @@ These features work cohesively to redefine the future of on-chain work environme
 
 ## Technology:
 Using Aztec's sandbox so that we could easily interact with our Solidity smart contract using Noir. We created additional user flow for private payments, this way freelancers can opt out of receiving escrow from open work contracts and instead return them to organizations. Then, they can issue private invoices using Aztec Token Bridge and effectively shield transactions and ensure their privacy. Privacy is critical especially in enterprise use cases, not only for payments, but also for credentials for private companies.
-
-## TODO: Project structure
-- `credLancer_cross_chain` has the contracts for :
-  - Cross-chain transactions using chainlink CCIP.
-  - Polygon ID's Verifiable Credentials
-  - Polygon zkEVM
-- `Credlancer_Privacy` has contracts and all logic related to private payments through `TalentLayerID` and `RequestNetwork`
-- `Credlancer_Update` has contracts and all logic related to public payments
-
 
 Public and Private payment methods
  SuperLancersZK supports both public and private payments.
