@@ -99,13 +99,12 @@ export const WriteOnlyFunctionForm = ({ abiFunction, onChange, contractAddress }
             </div>
           )}
           <div
-            className={`flex ${
-              writeDisabled &&
+            className={`flex ${writeDisabled &&
               "tooltip before:content-[attr(data-tip)] before:right-[-10px] before:left-auto before:transform-none"
-            }`}
+              }`}
             data-tip={`${writeDisabled && "Wallet not connected or in the wrong network"}`}
           >
-            <button className="btn btn-secondary btn-sm" disabled={writeDisabled || isLoading} onClick={handleWrite}>
+            <button className="btn btn-primary btn-sm" disabled={writeDisabled || isLoading} onClick={handleWrite}>
               {isLoading && <span className="loading loading-spinner loading-xs"></span>}
               Send 💸
             </button>

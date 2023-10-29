@@ -95,7 +95,7 @@ const GigPage = () => {
           </div>
           <div className="flex items-center">
             <div className="flex flex-col items-center mx-10">
-              <div className={`text-2xl font-bold`} style={{ color: `dark${statecolor[gig.status]}` }}> {states[gig.status]}</div>
+              <div className={`text-2xl font-bold`} style={{ color: `light${statecolor[gig.status]}` }}> {states[gig.status]}</div>
               <div className="tracking-widest font-medium text-sm">STATUS</div>
             </div>
             <div className="flex flex-col items-center mx-10">
@@ -118,7 +118,7 @@ const GigPage = () => {
               </>
             )
           }
-          <Link href="/">
+          <Link href="/find">
             <div className="mt-5 text-neutral-500 hover:text-black underline">Back to all Gigs</div>
           </Link>
         </div>

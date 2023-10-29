@@ -26,7 +26,7 @@ export const Balance = ({ address, className = "" }: TBalanceProps) => {
 
   if (isError) {
     return (
-      <div className={`border-2 border-gray-400 rounded-md px-2 flex flex-col items-center max-w-fit cursor-pointer`}>
+      <div className={`border-2 border-neutral-400 rounded-md px-2 flex flex-col items-center max-w-fit cursor-pointer`}>
         <div className="text-warning">Error</div>
       </div>
     );
