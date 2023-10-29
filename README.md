@@ -25,9 +25,9 @@ The existing prominent gig marketplaces are centralized, which could lead to con
 ### Key Features built at ETH London:
 
 
-- Self-sovereign identities and verifiable credentials, utilizing Flare Network and ERC-1155 Standard with Scaffold-Eth boilerplate for decentralized NFT credential minting. view Code [here](https://github.com/CredLancer/SuperLancers/blob/main/packages/hardhat/hardhat.config.ts), with future cross-chain integration
+- Self-sovereign identities and verifiable credentials, utilizing **Flare Network** and ERC-1155 Standard with **Scaffold-Eth** boilerplate for decentralized NFT credential minting. view Code [here](https://github.com/CredLancer/SuperLancers/blob/main/packages/hardhat/hardhat.config.ts), with future cross-chain integration
 - Utilized [Gateway.fm](https://github.com/CredLancer/SuperLancers/blob/main/packages/hardhat/hardhat.config.ts) as a node infrastructure for easy testing
-- Aztec's sandbox was used to easily interact with our Solidity smart contract using Noir. We created additional user flow for private payments, this way freelancers can opt out of receiving escrow from open work contracts and instead return them to organizations. Then, they can issue private invoices using Aztec Token Bridge and effectively shield transactions and ensure their privacy. Privacy is critical especially in enterprise use cases, not only for payments, but also for credentials for private companies.
+- **Aztec**'s sandbox was used to easily interact with our Solidity smart contract using Noir. We created additional user flow for private payments, this way freelancers can opt out of receiving escrow from open work contracts and instead return them to organizations. Then, they can issue private invoices using Aztec Token Bridge and effectively shield transactions and ensure their privacy. Privacy is critical especially in enterprise use cases, not only for payments, but also for credentials for private companies.
 
 These features work cohesively to redefine the future of on-chain work environments.'
 
