@@ -1,7 +1,5 @@
-import Link from "next/link";
 import type { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
-import { GigListing } from "~~/components/GigListing";
 import { useScaffoldContractRead } from "~~/hooks/scaffold-eth/useScaffoldContractRead";
 import { IdentificationIcon } from "@heroicons/react/24/outline";
 import {
@@ -33,7 +31,7 @@ const Home: NextPage = () => {
         </div>
         <br />
         <div className="w-100 flex flex-wrap justify-between">
-          {mintedGigTitles && mintedGigDescription && mintedGigTitles.map((title, index) => (
+          {mintedGigTitles && mintedGigDescription && mintedGigTitles.map((title: any, index: any) => (
             <div key={index} className="text-center px-10 rounded p-4" style={{ width: 400 }}>
               <div className="bg-neutral-900 p-4">
                 <img src="" alt="" />
