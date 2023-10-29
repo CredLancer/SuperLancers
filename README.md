@@ -20,7 +20,9 @@ Discovering talent online and finding the right person to do a task for you is n
 
 The existing prominent gig marketplaces are centralized, which could lead to concerns surrounding the public disclosure of one's income and personal information. SuperLancersZK addresses and resolves this particular challenge by offering a decentralised gig marketplace.
 
-## Key Features built at ETH London:
+## Key Features
+
+### Key Features built at ETH London:
 
 
 - Self-sovereign identities and verifiable credentials, utilizing Flare Network and ERC-1155 Standard for decentralized NFT credential minting. view Code [here](https://github.com/CredLancer/SuperLancers/blob/main/packages/hardhat/hardhat.config.ts), with future cross-chain integration
@@ -28,7 +30,7 @@ The existing prominent gig marketplaces are centralized, which could lead to con
 
 These features work cohesively to redefine the future of on-chain work environments.'
 
-## Other Key Features:
+### Other Key Features:
 
 - Seamless cross-chain payments for ease of transactions, view code [here](https://github.com/CredLancer/LancersZK/blob/a6cf975a12f75c151ea4626f1f3e185f5b347a0a/credLancer_cross_chain/src/cross-chain/QuestControllerSender.sol) and [here](https://github.com/CredLancer/LancersZK/blob/e61c46fadfd2a8b454fd4012abd79f2df1e81f0f/credLancer_cross_chain/src/QuestController.sol#L203) .
 - A digital reputation framework ensuring privacy in payments, invoicing, and encouraging anonymous feedback. view code[here](https://github.com/CredLancer/LancersZK/blob/58d28bd6e9bff95a5f9e95e0938aa91f52a40f49/Credlancer_Privacy/packages/hardhat/scripts/request)
