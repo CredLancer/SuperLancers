@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
 import { GigListing } from "~~/components/GigListing";
 import { useScaffoldContractRead } from "~~/hooks/scaffold-eth/useScaffoldContractRead";
+import { IdentificationIcon, LightBulbIcon, ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
 const Home: NextPage = () => {
   // const { data: gigsList } = useScaffoldContractRead({
@@ -41,13 +42,13 @@ const Home: NextPage = () => {
     <>
       <MetaHeader />
       <div className="container mx-auto mt-10">
-        <div className="my-20">
+        <div className="my-32">
           <div className="text-7xl font-extrabold">SuperLancers</div>
           <div className="mt-4">A privacy-preserving talent platform built on trust and verifiable credentials</div>
 
           <div className="mt-4">
             <Link href="/find">
-              <div className="btn btn-primary  rounded-md font-bold normal-case px-10 cursor-auto mr-4">
+              <div className="btn btn-primary  rounded-md font-bold normal-case cursor-auto mr-4">
                 Find gigs
               </div>
             </Link>
@@ -59,26 +60,26 @@ const Home: NextPage = () => {
           </div>
         </div>
         <br />
-        <div className="w-100 flex flex-wrap justify-between">
-          <div className="w-1/3 text-center px-10 rounded p-4">
-            <div className="bg-neutral-900 p-4">
-              <img src="" alt="" />
-              <div className="title text-lg font-bold">Problem</div>
-              <div className="desc">Some long description can go here that will be really detailed about the specifications of the job that is required.</div>
+        <div className="w-100 max-w-7xl flex flex-wrap justify-between">
+          <div className="w-1/4 rounded p-4">
+            <div className="">
+              <ExclamationTriangleIcon className="w-1/5 text-primary" />
+              <div className="title text-lg font-bold mt-3 mb-1">The Problem</div>
+              <div className="desc">There are currently tons of <b>fake credentials</b> on professional networks, it's difficult to match the <b>right talent</b>, and existing gig marketplaces are completely <b>centalized.</b></div>
             </div>
           </div>
-          <div className="w-1/3 text-center px-10 rounded p-4">
-            <div className="bg-neutral-900 p-4">
-              <img src="" alt="" />
-              <div className="title text-lg font-bold">Solution</div>
-              <div className="desc">Some long description can go here that will be really detailed about the specifications of the job that is required.</div>
+          <div className="w-1/4 rounded p-4">
+            <div className="">
+              <LightBulbIcon className="w-1/5 text-primary" />
+              <div className="title text-lg font-bold mt-3 mb-1">SuperLancer's Solution</div>
+              <div className="desc">Our game-changing solution maximizes trust and efficiency in the gig economy. Leveraging smart credentials and an integrated web platform.</div>
             </div>
           </div>
-          <div className="w-1/3 text-center px-10 rounded p-4">
-            <div className="bg-neutral-900 p-4">
-              <img src="" alt="" />
-              <div className="title text-lg font-bold">Problem</div>
-              <div className="desc">Some long description can go here that will be really detailed about the specifications of the job that is required.</div>
+          <div className="w-1/4 rounded p-4">
+            <div className="">
+              <IdentificationIcon className="w-1/5 text-primary" />
+              <div className="title text-lg font-bold mt-3 mb-1">Smart Credentials</div>
+              <div className="desc">We utilise smart credentials with ERC-1155 to verify when freelancers have legitimately completed work in a decentralised way.</div>
             </div>
           </div>
         </div>

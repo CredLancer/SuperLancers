@@ -21,7 +21,6 @@ const Home: NextPage = () => {
     functionName: "getAllMintedGigDescriptionsByAddress",
     args: [address] // provide a default value of 0 if address is undefined
   });
-
   return (
     <>
       <MetaHeader />
@@ -29,17 +28,21 @@ const Home: NextPage = () => {
         <div className="my-20">
           <div className="text-7xl font-bold">My Profile</div>
           <div className="mt-4">Address: {address}</div>
-          <div className="mt-4">Gigs Approved and Minted</div>
         </div>
+        <hr />
         <br />
+        <div className="text-2xl mb-1 mt-7 font-bold">Smart Credentials</div>
+        <div className="text-sm mb-10">Previous gigs that have been marked as completed and approved, will appear here as smart credentials, send to the user as an ERC-1155</div>
         <div className="w-100 flex flex-wrap justify-between">
-          {mintedGigTitles && mintedGigDescription && mintedGigTitles.map((title, index) => (
-            <div key={index} className="text-center px-10 rounded p-4" style={{ width: 400 }}>
-              <div className="bg-neutral-900 p-4">
+          {mintedGigTitles && mintedGigTitles.map((title, index) => (
+            <div key={index} className="rounded mr-10" style={{ minWidth: 300 }}>
+              <div className="bg-neutral-900 border-primary border-2 rounded p-6 py-10">
                 <img src="" alt="" />
-                <IdentificationIcon className="w-20 m-auto" />
-                <div className="title text-lg font-bold">{title}</div>
-                <div className="desc">{mintedGigDescription[index]}</div>
+                <IdentificationIcon className="w-20 text-primary" />
+                <div className="title font-bold mt-5">{title}</div>
+                <div className="title text-sm">{mintedGigDescription && mintedGigDescription[index]}</div>
+                <div className="title text-xs mt-10 text-neutral-400">ERC1155 Smart Credential</div>
+                {/* <div className="desc">{mintedGigDescription[index]}</div> */}
               </div>
             </div>
           ))}

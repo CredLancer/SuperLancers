@@ -18,7 +18,7 @@ const GigPage = () => {
   console.log({ gig })
 
   const states = ["Available", "In Progress", "Finished", "Approved"]
-  const statecolor = ["black", "orange", "red", "green"]
+  const statecolor = ["white", "orange", "red", "green"]
 
   const { writeAsync, isLoading, isMining } = useScaffoldContractWrite({
     contractName: "GigMarketplace",
@@ -50,11 +50,11 @@ const GigPage = () => {
     <>
       {
         gig.status === 0 &&
-        <div className="button bg-black text-white hover:opacity-50 p-3 w-fit px-10 rounded" onClick={writeAsync}>Claim & Start Gig</div>
+        <div className="button bg-primary hover:cursor-pointer text-white hover:opacity-50 p-3 w-fit px-10 rounded" onClick={writeAsync}>Claim & Start Gig</div>
       }
       {
         gig.status === 1 &&
-        <div className="button bg-black text-white hover:opacity-50 p-3 w-fit px-10 rounded" onClick={writeAsync}>Mark Gig as Completed</div>
+        <div className="button bg-primary hover:cursor-pointer text-white hover:opacity-50 p-3 w-fit px-10 rounded" onClick={writeAsync}>Mark Gig as Completed</div>
       }
       {
         gig.status === 2 &&
@@ -95,7 +95,7 @@ const GigPage = () => {
           </div>
           <div className="flex items-center">
             <div className="flex flex-col items-center mx-10">
-              <div className={`text-2xl font-bold`} style={{ color: `light${statecolor[gig.status]}` }}> {states[gig.status]}</div>
+              <div className={`text-2xl font-bold`} style={{ color: `${statecolor[gig.status]}` }}> {states[gig.status]}</div>
               <div className="tracking-widest font-medium text-sm">STATUS</div>
             </div>
             <div className="flex flex-col items-center mx-10">
