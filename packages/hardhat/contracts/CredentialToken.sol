@@ -22,8 +22,8 @@ contract CredentialToken is ERC1155, AccessControl {
 	}
 
 	function mint(address account, uint256 gigId) public {
-		_mint(account, totalMinted, 1, "");
 		totalMinted += 1;
+		_mint(account, totalMinted, 1, "");
     credential_id_to_gig_id[totalMinted] = gigId;
 	}
 
@@ -66,7 +66,7 @@ contract CredentialToken is ERC1155, AccessControl {
     uint256[] memory tempGigIds = new uint256[](totalMinted);
     uint256 count = 0;
 
-    for (uint256 i = 0; i < totalMinted; i++) {
+    for (uint256 i = 1; i <= totalMinted; i++) {
         if (balanceOf(account, i) > 0) {
             // The token with ID `i` belongs to the account, so retrieve the associated gig ID.
             tempGigIds[count] = credential_id_to_gig_id[i];
@@ -81,6 +81,7 @@ contract CredentialToken is ERC1155, AccessControl {
     }
 
     return resultGigIds;
-  }
+}
+
 
 }
