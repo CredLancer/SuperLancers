@@ -2,30 +2,36 @@ import Link from "next/link";
 import type { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
 import { GigListing } from "~~/components/GigListing";
+import { useScaffoldContractRead } from "~~/hooks/scaffold-eth/useScaffoldContractRead";
 
 const Home: NextPage = () => {
-  const gigs = [{
-    id: 1,
-    title: "Create Figma Designs for Web Applications",
-    description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
-    reward: "5 ETH",
-    timeline: "2 weeks",
-    client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
-  }, {
-    id: 1,
-    title: "Create Figma Designs for Web Applications",
-    description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
-    reward: "5 ETH",
-    timeline: "2 weeks",
-    client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
-  }, {
-    id: 1,
-    title: "Create Figma Designs for Web Applications",
-    description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
-    reward: "5 ETH",
-    timeline: "2 weeks",
-    client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
-  }];
+  const { data: gigsList } = useScaffoldContractRead({
+    contractName: "GigMarketplace",
+    functionName: "listGigs",
+  });
+
+  // const gigs = [{
+  //   id: 1,
+  //   title: "Create Figma Designs for Web Applications",
+  //   description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
+  //   reward: "5 ETH",
+  //   timeline: "2 weeks",
+  //   client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
+  // }, {
+  //   id: 1,
+  //   title: "Create Figma Designs for Web Applications",
+  //   description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
+  //   reward: "5 ETH",
+  //   timeline: "2 weeks",
+  //   client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
+  // }, {
+  //   id: 1,
+  //   title: "Create Figma Designs for Web Applications",
+  //   description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
+  //   reward: "5 ETH",
+  //   timeline: "2 weeks",
+  //   client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
+  // }];
 
   return (
     <>
@@ -38,7 +44,8 @@ const Home: NextPage = () => {
           </Link>
         </div>
         <br />
-        {gigs.map((g, i) => <GigListing {...g} key={i} />)}
+        {(!gigsList || gigsList.length === 0) && <>No gigs are currently available</>}
+        {(gigsList || []).map((g, i) => <GigListing {...g} key={i} />)}
       </div>
     </>
   );

@@ -7,7 +7,7 @@ export const GigListing = ({
   description,
   reward,
   timeline,
-  client
+  creator
 }) => {
   return (
     <Link href={`/gigs/${id}`}>
@@ -15,12 +15,12 @@ export const GigListing = ({
         <div className="flex justify-center flex-col w-1/2">
           <div className="font-bold text-xl">{title}</div>
           <div className="">{description}</div>
-          <div className="text-xs pt-3">Posted by: {client}</div>
+          <div className="text-xs pt-3">Posted by: {creator}</div>
           <div className="tracking-widest font-medium text-sm"></div>
         </div>
         <div className="flex items-center">
           <div className="flex flex-col items-center mr-10">
-            <div className="text-2xl font-bold">{reward}</div>
+            <div className="text-2xl font-bold">{reward.toString()} FLR</div>
             <div className="tracking-widest font-medium text-sm">REWARD</div>
           </div>
           <div className="flex flex-col items-center ml-10">
