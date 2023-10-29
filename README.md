@@ -17,11 +17,13 @@ All these features work well together to create a reimagined workplace for the o
 
 ## Problems We're Solving
 
-40% of people lie on their resumes, and three out of four employers have caught a lie on someone's resume. With on-chain actions in SuperLancersZK leaving a digital trail for everyone's skills and activities, people can make sure that user profiles are 
-always accurate and truthful.
+40% of people lie on their resumes, and three out of four employers have caught a lie on someone's resume. With on-chain actions in SuperLancersZK leaving a digital trail for everyone's skills and activities, people can make sure that user profiles are always accurate and truthful.
 
-There is no decentralized job platform that allows for private transactions, and this could basically lead to issues like the whole public seeing how much you earn for a living. SuperLancersZK solves this by enabling private transactions and even private 
-job postings.
+Discovering talent online and finding the right person to do a task for you is not always easy; however, SuperLancersZK facilitates talent matching by creating an evidence-backed standard.
+
+The existing prominent gig marketplaces are centralized, which could lead to concerns surrounding the public disclosure of one's income and personal information. SuperLancersZK addresses and resolves this particular challenge using **Scaffold-Eth**'s decentralizing technology.
+
+
 
 ## Key Features:
 
