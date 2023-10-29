@@ -3,37 +3,17 @@ import type { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
 import { GigListing } from "~~/components/GigListing";
 import { useScaffoldContractRead } from "~~/hooks/scaffold-eth/useScaffoldContractRead";
+import { IdentificationIcon } from "@heroicons/react/24/outline";
+import {
+  useAccount,
+} from 'wagmi'
 
 const Home: NextPage = () => {
+  const { address } = useAccount();
   // const { data: gigsList } = useScaffoldContractRead({
   //   contractName: "GigMarketplace",
   //   functionName: "listGigs",
   // });
-
-  // const gigs = [{
-  //   id: 1,
-  //   title: "Create Figma Designs for Web Applications",
-  //   description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
-  //   reward: "5 ETH",
-  //   timeline: "2 weeks",
-  //   client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
-  // }, {
-  //   id: 1,
-  //   title: "Create Figma Designs for Web Applications",
-  //   description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
-  //   reward: "5 ETH",
-  //   timeline: "2 weeks",
-  //   client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
-  // }, {
-  //   id: 1,
-  //   title: "Create Figma Designs for Web Applications",
-  //   description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
-  //   reward: "5 ETH",
-  //   timeline: "2 weeks",
-  //   client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
-  // }];
-
-  // const gigListingComponents = gigsList && gigsList.sort((a, b) => a.status - b.status).map((g, i) => <GigListing {...g} key={i} />);
 
   // console.log({ gigsList })
 
@@ -42,48 +22,20 @@ const Home: NextPage = () => {
       <MetaHeader />
       <div className="container mx-auto mt-10">
         <div className="my-20">
-          <div className="text-7xl font-bold">SuperLancers</div>
-          <div className="mt-4">A privacy-preserving talent platform built on trust and verifiable credentials</div>
-
-          <div className="mt-4">
-            <Link href="/find">
-              <div className="btn btn-primary  rounded-md font-bold normal-case px-10 cursor-auto mr-4">
-                Find gigs
-              </div>
-            </Link>
-            <Link href="/gigs/create">
-              <div className="btn btn-white  rounded-md font-bold normal-case px-10 cursor-auto">
-                Create a gig
-              </div>
-            </Link>
-          </div>
+          <div className="text-7xl font-bold">My Profile</div>
+          <div className="mt-4">Address: {address}</div>
         </div>
         <br />
         <div className="w-100 flex flex-wrap justify-between">
-          <div className="w-1/3 text-center px-10 rounded p-4">
+          <div className="text-center px-10 rounded p-4" style={{ width: 400 }}>
             <div className="bg-neutral-900 p-4">
               <img src="" alt="" />
-              <div className="title text-lg font-bold">On-Chain</div>
-              <div className="desc">Some long description can go here that will be really detailed about the specifications of the job that is required.</div>
-            </div>
-          </div>
-          <div className="w-1/3 text-center px-10 rounded p-4">
-            <div className="bg-neutral-900 p-4">
-              <img src="" alt="" />
-              <div className="title text-lg font-bold">On-Chain</div>
-              <div className="desc">Some long description can go here that will be really detailed about the specifications of the job that is required.</div>
-            </div>
-          </div>
-          <div className="w-1/3 text-center px-10 rounded p-4">
-            <div className="bg-neutral-900 p-4">
-              <img src="" alt="" />
-              <div className="title text-lg font-bold">On-Chain</div>
-              <div className="desc">Some long description can go here that will be really detailed about the specifications of the job that is required.</div>
+              <IdentificationIcon className="w-20 m-auto" />
+              <div className="title text-lg font-bold">Credential</div>
+              <div className="desc">Name of job here</div>
             </div>
           </div>
         </div>
-        {/* {(!gigsList || gigsList.length === 0) && <>No gigs are currently available</>} */}
-        {/* {gigListingComponents} */}
         <br />
       </div>
     </>

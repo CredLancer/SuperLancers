@@ -5,7 +5,7 @@ const contracts = {
       name: "localhost",
       contracts: {
         CredentialToken: {
-          address: "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+          address: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
           abi: [
             {
               inputs: [],
@@ -604,7 +604,7 @@ const contracts = {
           ],
         },
         GigMarketplace: {
-          address: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+          address: "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
           abi: [
             {
               inputs: [],
