@@ -33,9 +33,9 @@ const Home: NextPage = () => {
         <br />
         <div className="text-2xl mb-1 mt-7 font-bold">Smart Credentials</div>
         <div className="text-sm mb-10">Previous gigs that have been marked as completed and approved, will appear here as smart credentials, send to the user as an ERC-1155</div>
-        <div className="w-100 flex flex-wrap justify-between">
+        <div className="w-100 flex flex-wrap">
           {mintedGigTitles && mintedGigTitles.map((title, index) => (
-            <div key={index} className="rounded mr-10" style={{ minWidth: 300 }}>
+            <div key={index} className="rounded mr-10" style={{ width: 300 }}>
               <div className="bg-neutral-900 border-primary border-2 rounded p-6 py-10">
                 <img src="" alt="" />
                 <IdentificationIcon className="w-20 text-primary" />

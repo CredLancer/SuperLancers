@@ -105,7 +105,7 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken {
 
 		// Perform any necessary actions for approving the gig here.
 
-    mint(msg.sender, gigId);
+		mint(msg.sender, gigId);
 		gig.status = GigStatus.Approved;
 		emit GigApproved(gigId);
 	}
@@ -120,7 +120,6 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken {
 			}
 		}
 
-		// Create a new array with only the available gigs (excluding any unset elements)
 		Gig[] memory result = new Gig[](count);
 		for (uint256 j = 0; j < count; j++) {
 			result[j] = availableGigs[j];
@@ -133,27 +132,31 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken {
 		return gigs[gigId];
 	}
 
-  function getAllMintedGigTitlesByAddress(address account) public view returns (string[] memory) {
-        uint256[] memory gigIds = getAllMintedGigIdsByAddress(account);
-        string[] memory gigTitles = new string[](gigIds.length);
+	function getAllMintedGigTitlesByAddress(
+		address account
+	) public view returns (string[] memory) {
+		uint256[] memory gigIds = getAllMintedGigIdsByAddress(account);
+		string[] memory gigTitles = new string[](gigIds.length);
 
-        for (uint256 i = 0; i < gigIds.length; i++) {
-            Gig storage gig = gigs[gigIds[i]];
-            gigTitles[i] = gig.title;
-        }
+		for (uint256 i = 0; i < gigIds.length; i++) {
+			Gig storage gig = gigs[gigIds[i]];
+			gigTitles[i] = gig.title;
+		}
 
-        return gigTitles;
-    }
+		return gigTitles;
+	}
 
-  function getAllMintedGigDescriptionsByAddress(address account) public view returns (string[] memory) {
-        uint256[] memory gigIds = getAllMintedGigIdsByAddress(account);
-        string[] memory gigDescriptions = new string[](gigIds.length);
+	function getAllMintedGigDescriptionsByAddress(
+		address account
+	) public view returns (string[] memory) {
+		uint256[] memory gigIds = getAllMintedGigIdsByAddress(account);
+		string[] memory gigDescriptions = new string[](gigIds.length);
 
-        for (uint256 i = 0; i < gigIds.length; i++) {
-            Gig storage gig = gigs[gigIds[i]];
-            gigDescriptions[i] = gig.description;
-        }
+		for (uint256 i = 0; i < gigIds.length; i++) {
+			Gig storage gig = gigs[gigIds[i]];
+			gigDescriptions[i] = gig.description;
+		}
 
-        return gigDescriptions;
-    }
+		return gigDescriptions;
+	}
 }

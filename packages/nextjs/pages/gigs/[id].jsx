@@ -5,7 +5,12 @@ import { MetaHeader } from "~~/components/MetaHeader";
 import { useScaffoldContractWrite } from "~~/hooks/scaffold-eth/useScaffoldContractWrite";
 import { useScaffoldContractRead } from "~~/hooks/scaffold-eth/useScaffoldContractRead";
 
+import {
+  useAccount,
+} from 'wagmi'
+
 const GigPage = () => {
+  const { address } = useAccount();
   const router = useRouter();
   const [functionName, setFunctionName] = useState("")
 
@@ -57,7 +62,7 @@ const GigPage = () => {
         <div className="button bg-primary hover:cursor-pointer text-white hover:opacity-50 p-3 w-fit px-10 rounded" onClick={writeAsync}>Mark Gig as Completed</div>
       }
       {
-        gig.status === 2 &&
+        gig.status === 2 && address === gig.freelancer &&
         (
           <>
             <div className="mb-3">You've marked this gig as complete, please wait for the gig owner to approve your work.</div>
@@ -93,7 +98,7 @@ const GigPage = () => {
             <div className="text-sm pt-1"><span className="font-medium">Freelancer assigned:</span> {gig.freelancer}</div>
             <div className="tracking-widest font-medium text-sm"></div>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center justify-end w-1/2">
             <div className="flex flex-col items-center mx-10">
               <div className={`text-2xl font-bold`} style={{ color: `${statecolor[gig.status]}` }}> {states[gig.status]}</div>
               <div className="tracking-widest font-medium text-sm">STATUS</div>
@@ -114,7 +119,7 @@ const GigPage = () => {
             (isLoading || isMining) ? <>Loading...</> : (
               <>
                 {gig.freelancer && freelancerActions}
-                {gig.creator && ownerActions}
+                {address === gig.creator && ownerActions}
               </>
             )
           }
