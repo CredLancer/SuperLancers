@@ -7,7 +7,6 @@ import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 
 contract CredentialToken is ERC1155, AccessControl {
 	uint256 totalMinted = 0;
-	uint256 public constant length = 3;
   
 	mapping(uint256 => uint256) private credential_id_to_gig_id;
 
@@ -22,8 +21,8 @@ contract CredentialToken is ERC1155, AccessControl {
 	}
 
 	function mint(address account, uint256 gigId) public {
-		_mint(account, totalMinted, 1, "");
 		totalMinted += 1;
+		_mint(account, totalMinted, 1, "");
     credential_id_to_gig_id[totalMinted] = gigId;
 	}
 
@@ -61,12 +60,12 @@ contract CredentialToken is ERC1155, AccessControl {
 		return credential_id_to_gig_id[id];
 	}
 
-	function getAllGigIdsByAddress(address account) external view returns (uint256[] memory) {
+	function getAllMintedGigIdsByAddress(address account) public view returns (uint256[] memory) {
     // Initialize an array to store the gig IDs. The maximum size is totalMinted, but not all tokens might belong to the address.
     uint256[] memory tempGigIds = new uint256[](totalMinted);
     uint256 count = 0;
 
-    for (uint256 i = 0; i < totalMinted; i++) {
+    for (uint256 i = 1; i <= totalMinted; i++) {
         if (balanceOf(account, i) > 0) {
             // The token with ID `i` belongs to the account, so retrieve the associated gig ID.
             tempGigIds[count] = credential_id_to_gig_id[i];
@@ -81,6 +80,7 @@ contract CredentialToken is ERC1155, AccessControl {
     }
 
     return resultGigIds;
-  }
+}
+
 
 }
