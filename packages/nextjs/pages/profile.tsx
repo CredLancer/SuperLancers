@@ -1,7 +1,5 @@
-import Link from "next/link";
 import type { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
-import { GigListing } from "~~/components/GigListing";
 import { useScaffoldContractRead } from "~~/hooks/scaffold-eth/useScaffoldContractRead";
 import { IdentificationIcon } from "@heroicons/react/24/outline";
 import {
