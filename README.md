@@ -52,7 +52,6 @@ Public and Private payment methods
 
 
 #### How it works
-TODO:
 1.
     1. A Freelancer creates an ID using **TalentLayerID, we hope to integrate ENS**
     2. Both Organizations and Freelancers will have a **Railgun** wallet to preserve privacy of transactions
