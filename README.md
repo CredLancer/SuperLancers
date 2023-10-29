@@ -6,21 +6,21 @@ SuperLancersZK is a pioneering on-chain freelancing platform that offers a solut
 
 ## Unique Value Proposition
 
-While many on-chain talent markets focus on identities and credentials, LancersZK has these as basic features AND will be the first to focus on UX and ease of use to a wider userbase.
+While many on-chain talent markets focus on identities and credentials, SuperLancersZK has these as basic features AND will be the first to focus on UX and ease of use to a wider userbase.
 
 We make it easy to transact inside the protocol by providing interoperable payments across different chains. And our digital reputation framework preserves privacy in payments, invoicing and encourages anonymous feedback.
 
-Self sovereign identities and verifiable credentials are also a core feature of LancersZK, and we are leveraging Polygon's zkEVM and Polygon ID to make it possible to mint NFT credentials on-chain in a decentralized manner transparent trustless manner.
+Self sovereign identities and verifiable credentials are also a core feature of SuperLancersZK, and we are leveraging Polygon's zkEVM and Polygon ID to make it possible to mint NFT credentials on-chain in a decentralized manner transparent trustless manner.
 
 All these features work well together to create a reimagined workplace for the on-chain future.
 
 
 ## Problems We're Solving
 
-40% of people lie on their resumes, and three out of four employers have caught a lie on someone's resume. With on-chain actions in LancersZK leaving a digital trail for everyone's skills and activities, people can make sure that user profiles are 
+40% of people lie on their resumes, and three out of four employers have caught a lie on someone's resume. With on-chain actions in SuperLancersZK leaving a digital trail for everyone's skills and activities, people can make sure that user profiles are 
 always accurate and truthful.
 
-There is no decentralized job platform that allows for private transactions, and this could basically lead to issues like the whole public seeing how much you earn for a living. LancersZK solves this by enabling private transactions and even private 
+There is no decentralized job platform that allows for private transactions, and this could basically lead to issues like the whole public seeing how much you earn for a living. SuperLancersZK solves this by enabling private transactions and even private 
 job postings.
 
 ## Key Features:
@@ -41,7 +41,7 @@ These features work cohesively to redefine the future of on-chain work environme
 
 
 ## Public and Private payment methods
- LancersZK supports both public and private payments.
+ SuperLancersZK supports both public and private payments.
 
 ----------------------------------------------------------------
 ### Private Payment methods
@@ -63,7 +63,7 @@ These features work cohesively to redefine the future of on-chain work environme
     7. The Org will now check my work and hopefully approve using **Request Network**. Ok, it’s been approved, which triggers an Experience Credential (EC) for project completion.
     8. Now the Org and I can give a vote to eachother using **Semaphore Protocol**.
 #### How it's Made
-We used the following technologies to build LancersZK:
+We used the following technologies to build SuperLancersZK:
 
 - **TalentLayerID** contract to set up a social id upon registration, which then manages job requests and proposals
 - **Railgun Protocol**: both our user personas, Orgs (DAO) and Freelancers, need a Railgun wallet to interact with our dApp. The UI allows for a new user to use an existing Railgun wallet using WalletConnect, or create a new Railgun wallet using a Metamask wallet. Next, the Org can send a shielded transaction to an escrow smart contract upon confirming a Freelancer to work on a Quest. Once the funds are released from the escrow account they are stil zk-snark encrypted all the way to the Freelancer’s Railgun wallet.
@@ -112,5 +112,5 @@ for users' files.
 ![Alt text](assets/image-4.png)
 ![Alt text](assets/image-5.png)
 -----------------
-LancersZK is leading the way in reimagining the freelancing landscape by prioritizing privacy, accuracy, and user experience. Join us on this innovative journey as we revolutionize on-chain work environments and empower users with a trustless, private, and secure platform.
+SuperLancersZK is leading the way in reimagining the freelancing landscape by prioritizing privacy, accuracy, and user experience. Join us on this innovative journey as we revolutionize on-chain work environments and empower users with a trustless, private, and secure platform.
 
