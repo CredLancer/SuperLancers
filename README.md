@@ -6,7 +6,7 @@ SuperLancersZK is a pioneering on-chain freelancing platform that offers a solut
 
 ## Unique Value Proposition
 
-Self sovereign identities and verifiable credentials are the core feature of SuperLancersZK, and we are leveraging Flare and Scaffold-Eth to make it possible to mint NFT credentials on-chain in a decentralized and transparent manner.
+Self sovereign identities and verifiable credentials are the core feature of SuperLancersZK, and we are leveraging Flare and Scaffold-Eth to make it possible to mint NFT credentials on-chain in a decentralized and transparent manner. Our digital reputation framework uses Aztec Token Bridge to preserve privacy in payments, invoicing and encourage anonymous feedback.
 
 These features work well together to create a reimagined workplace for the on-chain future.
 
@@ -39,8 +39,8 @@ Using Aztec's sandbox so that we could easily interact with our Solidity smart c
 - `Credlancer_Update` has contracts and all logic related to public payments
 
 
-Future works: Public and Private payment methods
- SuperLancersZK will support both public and private payments in the future.
+Public and Private payment methods
+ SuperLancersZK supports both public and private payments.
 
 ----------------------------------------------------------------
 ### Private Payment methods
