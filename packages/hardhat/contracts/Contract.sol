@@ -105,7 +105,7 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken {
 
 		// Perform any necessary actions for approving the gig here.
 
-    mint(msg.sender, gigId);
+    mint(gig.freelancer, gigId); 
 		gig.status = GigStatus.Approved;
 		emit GigApproved(gigId);
 	}
