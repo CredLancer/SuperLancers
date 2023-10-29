@@ -36,10 +36,8 @@ These features work cohesively to redefine the future of on-chain work environme
 
 These features work cohesively to redefine the future of on-chain work environments.'
 
-## Technology:
-Using Aztec's sandbox so that we could easily interact with our Solidity smart contract using Noir. We created additional user flow for private payments, this way freelancers can opt out of receiving escrow from open work contracts and instead return them to organizations. Then, they can issue private invoices using Aztec Token Bridge and effectively shield transactions and ensure their privacy. Privacy is critical especially in enterprise use cases, not only for payments, but also for credentials for private companies.
 
-Public and Private payment methods
+## Public and Private payment methods
  SuperLancersZK supports both public and private payments.
 
 ----------------------------------------------------------------
