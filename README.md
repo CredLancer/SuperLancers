@@ -25,7 +25,7 @@ The existing prominent gig marketplaces are centralized, which could lead to con
 ### Key Features built at ETH London:
 
 
-- Self-sovereign identities and verifiable credentials, utilizing Flare Network and ERC-1155 Standard for decentralized NFT credential minting. view Code [here](https://github.com/CredLancer/SuperLancers/blob/main/packages/hardhat/hardhat.config.ts), with future cross-chain integration
+- Self-sovereign identities and verifiable credentials, utilizing Flare Network and ERC-1155 Standard with Scaffold-Eth boilerplate for decentralized NFT credential minting. view Code [here](https://github.com/CredLancer/SuperLancers/blob/main/packages/hardhat/hardhat.config.ts), with future cross-chain integration
 - Utilized [Gateway.fm](https://github.com/CredLancer/SuperLancers/blob/main/packages/hardhat/hardhat.config.ts) as a node infrastructure for easy testing
 
 These features work cohesively to redefine the future of on-chain work environments.'
