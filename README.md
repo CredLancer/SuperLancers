@@ -25,7 +25,10 @@ The existing prominent gig marketplaces are centralized, which could lead to con
 - A digital reputation framework ensuring privacy in payments, invoicing, and encouraging anonymous feedback. view code[here](https://github.com/CredLancer/LancersZK/blob/58d28bd6e9bff95a5f9e95e0938aa91f52a40f49/Credlancer_Privacy/packages/hardhat/scripts/request) 
 - Self-sovereign identities and verifiable credentials, utilizing Polygon's zkEVM and Polygon ID for decentralized NFT credential minting. view Code [here](https://github.com/CredLancer/LancersZK/blob/3150c3fa94b0fe67e8dde20c7eee955e998e91aa/credLancer_cross_chain/src/identity)
   
-These features work cohesively to redefine the future of on-chain work environments.
+These features work cohesively to redefine the future of on-chain work environments.'
+
+## Technology:
+Using Aztec's sandbox so that we could easily interact with our Solidity smart contract using Noir. We created additional user flow for private payments, this way freelancers can opt out of receiving escrow from open work contracts and instead return them to organizations. Then, they can issue private invoices using Aztec Token Bridge and effectively shield transactions and ensure their privacy. Privacy is critical especially in enterprise use cases, not only for payments, but also for credentials for private companies.
 
 ## Project structure
 - `credLancer_cross_chain` has the contracts for :
@@ -36,7 +39,7 @@ These features work cohesively to redefine the future of on-chain work environme
 - `Credlancer_Update` has contracts and all logic related to public payments
 
 
-## Future works: Public and Private payment methods
+Future works: Public and Private payment methods
  SuperLancersZK will support both public and private payments in the future.
 
 ----------------------------------------------------------------
@@ -48,7 +51,7 @@ These features work cohesively to redefine the future of on-chain work environme
 
 
   
-#### How it might work
+#### How it works
 1. 
     1. A Freelancer creates an ID using **TalentLayerID, we hope to integrate ENS** 
     2. Both Organizations and Freelancers will have a **Railgun** wallet to preserve privacy of transactions
@@ -61,7 +64,7 @@ These features work cohesively to redefine the future of on-chain work environme
 
 ### Public methods
  Public payments are made through on-chain contracts with cross-chain functionality. 
-#### How it might work
+#### How it works
 
 1. Freelancer signs up and writes a basic description and skills list to attract potential clients. There is no credentials on his/her profile yet, because it will only be filled through NFTs issued by verified organizations.
 
