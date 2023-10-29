@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "./CredentialToken.sol";
 
-contract GigMarketplace is Ownable, Pausable, CredentialToken{
+contract GigMarketplace is Ownable, Pausable, CredentialToken {
 	enum GigStatus {
 		Available,
 		Accepted,
@@ -15,7 +15,6 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken{
 
 	struct Gig {
 		uint256 id;
-		uint256 gigType;
 		address creator;
 		address freelancer;
 		string title;
@@ -30,7 +29,6 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken{
 
 	event GigCreated(
 		uint256 indexed gigId,
-		uint256 indexed gigType,
 		address indexed creator,
 		string title,
 		string description,
@@ -48,13 +46,12 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken{
 	function createGig(
 		string memory title,
 		string memory description,
-		uint256 gigType,
+		string memory timeline,
 		uint256 reward
 	) public whenNotPaused {
 		uint256 gigId = ++totalGigs;
 		gigs[gigId] = Gig({
 			id: gigId,
-			gigType: gigType,
 			creator: msg.sender,
 			freelancer: address(0),
 			title: title,
@@ -63,7 +60,14 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken{
 			reward: reward,
 			status: GigStatus.Available
 		});
-		emit GigCreated(gigId, gigType, msg.sender, title, description, reward);
+		emit GigCreated(
+			gigId,
+			msg.sender,
+			title,
+			description,
+			timeline,
+			reward
+		);
 	}
 
 	function listGigs() public view returns (Gig[] memory) {
@@ -81,7 +85,6 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken{
 
 		gig.freelancer = msg.sender;
 		gig.status = GigStatus.Accepted;
-
 		emit GigAccepted(gigId, msg.sender);
 	}
 
@@ -91,7 +94,7 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken{
 		if (gig.status != GigStatus.Accepted) revert InvalidStatusTransition();
 
 		gig.status = GigStatus.Finished;
-		mint(msg.sender, 0, gig.gigType, gigId);
+    mint(msg.sender, gigId);
 		emit GigFinished(gigId);
 	}
 
