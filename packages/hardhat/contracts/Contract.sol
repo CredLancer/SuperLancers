@@ -94,7 +94,6 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken {
 		if (gig.status != GigStatus.Accepted) revert InvalidStatusTransition();
 
 		gig.status = GigStatus.Finished;
-    mint(msg.sender, gigId);
 		emit GigFinished(gigId);
 	}
 
@@ -106,6 +105,7 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken {
 
 		// Perform any necessary actions for approving the gig here.
 
+    mint(msg.sender, gigId);
 		gig.status = GigStatus.Approved;
 		emit GigApproved(gigId);
 	}
