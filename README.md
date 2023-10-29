@@ -6,20 +6,16 @@ SuperLancersZK is a pioneering on-chain freelancing platform that offers a solut
 
 ## Unique Value Proposition
 
-While many on-chain talent markets focus on identities and credentials, SuperLancersZK has these as basic features AND will be the first to focus on UX and ease of use to a wider userbase.
+Self sovereign identities and verifiable credentials are the core feature of SuperLancersZK, and we are leveraging Polygon's zkEVM and Polygon ID to make it possible to mint NFT credentials on-chain in a decentralized and transparent manner.
 
-We make it easy to transact inside the protocol by providing interoperable payments across different chains. And our digital reputation framework preserves privacy in payments, invoicing and encourages anonymous feedback.
-
-Self sovereign identities and verifiable credentials are also a core feature of SuperLancersZK, and we are leveraging Polygon's zkEVM and Polygon ID to make it possible to mint NFT credentials on-chain in a decentralized manner transparent trustless manner.
-
-All these features work well together to create a reimagined workplace for the on-chain future.
+These features work well together to create a reimagined workplace for the on-chain future.
 
 
 ## Problems We're Solving
 
-40% of people lie on their resumes, and three out of four employers have caught a lie on someone's resume. With on-chain actions in SuperLancersZK leaving a digital trail for everyone's skills and activities, people can make sure that user profiles are always accurate and truthful.
+40% of people lie on their resumes, and three out of four employers have caught a lie on someone's resume. With on-chain actions in SuperLancersZK leaving a digital trail for everyone's skills and activities, SuperLancersZK offer a tamper-proof credentials where organizations can make sure that user profiles are always accurate and truthful.
 
-Discovering talent online and finding the right person to do a task for you is not always easy. SuperLancersZK facilitates talent matching by introducing an evidence-backed standard.
+Discovering talent online and finding the right person to do a task for you is not always easy. SuperLancersZK facilitates talent matching by providing the community an accurate, reliable and searchable representation of real time freelancer qualifications and professional development.
 
 The existing prominent gig marketplaces are centralized, which could lead to concerns surrounding the public disclosure of one's income and personal information. SuperLancersZK addresses and resolves this particular challenge by offering a decentralised gig marketplace.
 
