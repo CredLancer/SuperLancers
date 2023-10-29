@@ -1,44 +1,76 @@
-// contracts/CredentialToken.sol
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
 
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
+import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 
-contract CredentialToken is ERC721URIStorage {
-    using Counters for Counters.Counter;
-    Counters.Counter private _tokenIds;
-    mapping(address => uint256[]) private _ownedTokens;
+contract CredentialToken is ERC1155, AccessControl {
+	uint256 totalMinted = 0;
+	uint256 public constant length = 3;
+	mapping(uint256 => string) private gigs_type;
 
-    constructor() ERC721("CredentialToken", "CRE") {}
+	error SoulboundTokenCannotBeTransferred();
+	error SoulboundTokenCannotBeApproved();
 
-    function toAsciiString(address x) internal pure returns (string memory) {
-        bytes memory s = new bytes(40);
-        for (uint i = 0; i < 20; i++) {
-            bytes1 b = bytes1(uint8(uint(uint160(x)) / (2 ** (8 * (19 - i)))));
-            bytes1 hi = bytes1(uint8(b) / 16);
-            bytes1 lo = bytes1(uint8(b) - 16 * uint8(hi));
-            s[2 * i] = char(hi);
-            s[2 * i + 1] = char(lo);
-        }
-        return string(s);
-    }
+	constructor() ERC1155("ipfs://") {
+        gigs_type[0] = 'Copy Writing Gig';
+        gigs_type[1] = 'Frontend Development Gig';
+        gigs_type[2] = 'Gig';
+	}
 
-    function char(bytes1 b) internal pure returns (bytes1 c) {
-        if (uint8(b) < 10) return bytes1(uint8(b) + 0x30);
-        else return bytes1(uint8(b) + 0x57);
-    }
+	function setURI(string memory newuri) public {
+		_setURI(newuri);
+	}
 
-    function awardItem(address player, string memory tokenURI) public returns (uint256) {
-        _tokenIds.increment();
-        uint256 newItemId = _tokenIds.current();
-        _mint(player, newItemId);
-        _setTokenURI(newItemId, tokenURI);
-        _ownedTokens[player].push(newItemId);  // Add the token to the owner's list
-        return newItemId;
-    }
+	function mint(address account, uint256 id, uint256 gigType, uint256 gigId) public {
+		_mint(account, gigType, 1, "");
+		totalMinted += 1;
 
-    function getTokensOfOwner(address owner) external view returns (uint256[] memory) {
-        return _ownedTokens[owner];
-    }
+	}
+
+	// The following functions are overrides required by Solidity.
+
+	function supportsInterface(
+		bytes4 interfaceId
+	) public view override(ERC1155, AccessControl) returns (bool) {
+		return super.supportsInterface(interfaceId);
+	}
+
+	function _beforeTokenTransfer(
+		address /* operator */,
+		address from,
+		address /* to */,
+		uint256[] memory /* ids */,
+		uint256[] memory /* amounts */,
+		bytes memory /* data */
+	) internal pure override {
+		if (from != address(0)) revert SoulboundTokenCannotBeTransferred();
+	}
+
+	function getTotalSupply() external view returns (uint256) {
+		return totalMinted;
+	}
+
+	function setApprovalForAll(
+		address /* operator */,
+		bool /* approved */
+	) public pure override {
+		revert SoulboundTokenCannotBeTransferred();
+	}
+
+	function getGigTypeById(uint256 id) external view returns (string memory) {
+		return gigs_type[id];
+	}
+
+	function getBalancesOf(
+		address account,
+		uint256 gig_type
+	) external view returns (uint256[] memory) {
+		uint256[] memory balances = new uint256[](length);
+		for (uint256 i = 0; i < length; i++) {
+			balances[i] = balanceOf(account, i);
+		}
+		return balances;
+	}
 }
