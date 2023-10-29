@@ -3,8 +3,9 @@ pragma solidity ^0.8.17;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
+import "./CredentialToken.sol";
 
-contract GigMarketplace is Ownable, Pausable {
+contract GigMarketplace is Ownable, Pausable, CredentialToken {
 	enum GigStatus {
 		Available,
 		Accepted,
@@ -93,6 +94,7 @@ contract GigMarketplace is Ownable, Pausable {
 		if (gig.status != GigStatus.Accepted) revert InvalidStatusTransition();
 
 		gig.status = GigStatus.Finished;
+    mint(msg.sender, gigId);
 		emit GigFinished(gigId);
 	}
 
