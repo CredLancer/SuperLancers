@@ -6,7 +6,7 @@ SuperLancersZK is a pioneering on-chain freelancing platform that offers a solut
 
 ## Unique Value Proposition
 
-Self sovereign identities and verifiable credentials are the core feature of SuperLancersZK, and we are leveraging Polygon's zkEVM and Polygon ID to make it possible to mint NFT credentials on-chain in a decentralized and transparent manner.
+Self sovereign identities and verifiable credentials are the core feature of SuperLancersZK, and we are leveraging Flare and Scaffold-Eth to make it possible to mint NFT credentials on-chain in a decentralized and transparent manner.
 
 These features work well together to create a reimagined workplace for the on-chain future.
 
@@ -18,8 +18,6 @@ These features work well together to create a reimagined workplace for the on-ch
 Discovering talent online and finding the right person to do a task for you is not always easy. SuperLancersZK facilitates talent matching by providing the community an accurate, reliable and searchable representation of real time freelancer qualifications and professional development.
 
 The existing prominent gig marketplaces are centralized, which could lead to concerns surrounding the public disclosure of one's income and personal information. SuperLancersZK addresses and resolves this particular challenge by offering a decentralised gig marketplace.
-
-
 
 ## Key Features:
 
