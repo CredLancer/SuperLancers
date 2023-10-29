@@ -1,5 +1,5 @@
 # SuperLancersZK
-![Alt text](assets/image.jpg)
+![Alt text](assets/alt.png)
 ## Project Description
 SuperLancersZK is a pioneering on-chain freelancing platform that offers a solution for tapping into the talent market, featuring decentralized private payments and verifiable credentials.
 
