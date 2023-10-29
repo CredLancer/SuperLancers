@@ -6,22 +6,18 @@ SuperLancersZK is a pioneering on-chain freelancing platform that offers a solut
 
 ## Unique Value Proposition
 
-While many on-chain talent markets focus on identities and credentials, SuperLancersZK has these as basic features AND will be the first to focus on UX and ease of use to a wider userbase.
+Self sovereign identities and verifiable credentials are the core feature of SuperLancersZK, and we are leveraging Flare and Scaffold-Eth to make it possible to mint NFT credentials on-chain in a decentralized and transparent manner.
 
-We make it easy to transact inside the protocol by providing interoperable payments across different chains. And our digital reputation framework preserves privacy in payments, invoicing and encourages anonymous feedback.
-
-Self sovereign identities and verifiable credentials are also a core feature of SuperLancersZK, and we are leveraging Polygon's zkEVM and Polygon ID to make it possible to mint NFT credentials on-chain in a decentralized manner transparent trustless manner.
-
-All these features work well together to create a reimagined workplace for the on-chain future.
+These features work well together to create a reimagined workplace for the on-chain future.
 
 
 ## Problems We're Solving
 
-40% of people lie on their resumes, and three out of four employers have caught a lie on someone's resume. With on-chain actions in SuperLancersZK leaving a digital trail for everyone's skills and activities, people can make sure that user profiles are 
-always accurate and truthful.
+40% of people lie on their resumes, and three out of four employers have caught a lie on someone's resume. With on-chain actions in SuperLancersZK leaving a digital trail for everyone's skills and activities, SuperLancersZK offer a tamper-proof credentials where organizations can make sure that user profiles are always accurate and truthful.
 
-There is no decentralized job platform that allows for private transactions, and this could basically lead to issues like the whole public seeing how much you earn for a living. SuperLancersZK solves this by enabling private transactions and even private 
-job postings.
+Discovering talent online and finding the right person to do a task for you is not always easy. SuperLancersZK facilitates talent matching by providing the community an accurate, reliable and searchable representation of real time freelancer qualifications and professional development.
+
+The existing prominent gig marketplaces are centralized, which could lead to concerns surrounding the public disclosure of one's income and personal information. SuperLancersZK addresses and resolves this particular challenge by offering a decentralised gig marketplace.
 
 ## Key Features:
 
@@ -29,7 +25,10 @@ job postings.
 - A digital reputation framework ensuring privacy in payments, invoicing, and encouraging anonymous feedback. view code[here](https://github.com/CredLancer/LancersZK/blob/58d28bd6e9bff95a5f9e95e0938aa91f52a40f49/Credlancer_Privacy/packages/hardhat/scripts/request) 
 - Self-sovereign identities and verifiable credentials, utilizing Polygon's zkEVM and Polygon ID for decentralized NFT credential minting. view Code [here](https://github.com/CredLancer/LancersZK/blob/3150c3fa94b0fe67e8dde20c7eee955e998e91aa/credLancer_cross_chain/src/identity)
   
-These features work cohesively to redefine the future of on-chain work environments.
+These features work cohesively to redefine the future of on-chain work environments.'
+
+## Technology:
+Using Aztec's sandbox so that we could easily interact with our Solidity smart contract using Noir. We created additional user flow for private payments, this way freelancers can opt out of receiving escrow from open work contracts and instead return them to organizations. Then, they can issue private invoices using Aztec Token Bridge and effectively shield transactions and ensure their privacy. Privacy is critical especially in enterprise use cases, not only for payments, but also for credentials for private companies.
 
 ## Project structure
 - `credLancer_cross_chain` has the contracts for :
@@ -40,7 +39,7 @@ These features work cohesively to redefine the future of on-chain work environme
 - `Credlancer_Update` has contracts and all logic related to public payments
 
 
-## Future works: Public and Private payment methods
+Future works: Public and Private payment methods
  SuperLancersZK will support both public and private payments in the future.
 
 ----------------------------------------------------------------
@@ -52,7 +51,7 @@ These features work cohesively to redefine the future of on-chain work environme
 
 
   
-#### How it might work
+#### How it works
 1. 
     1. A Freelancer creates an ID using **TalentLayerID, we hope to integrate ENS** 
     2. Both Organizations and Freelancers will have a **Railgun** wallet to preserve privacy of transactions
@@ -65,7 +64,7 @@ These features work cohesively to redefine the future of on-chain work environme
 
 ### Public methods
  Public payments are made through on-chain contracts with cross-chain functionality. 
-#### How it might work
+#### How it works
 
 1. Freelancer signs up and writes a basic description and skills list to attract potential clients. There is no credentials on his/her profile yet, because it will only be filled through NFTs issued by verified organizations.
 
