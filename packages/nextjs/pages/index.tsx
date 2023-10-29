@@ -42,7 +42,7 @@ const Home: NextPage = () => {
       <MetaHeader />
       <div className="container mx-auto mt-10">
         <div className="my-20">
-          <div className="text-7xl font-bold">SuperLancers</div>
+          <div className="text-7xl font-extrabold">SuperLancers</div>
           <div className="mt-4">A privacy-preserving talent platform built on trust and verifiable credentials</div>
 
           <div className="mt-4">
@@ -63,21 +63,21 @@ const Home: NextPage = () => {
           <div className="w-1/3 text-center px-10 rounded p-4">
             <div className="bg-neutral-900 p-4">
               <img src="" alt="" />
-              <div className="title text-lg font-bold">On-Chain</div>
+              <div className="title text-lg font-bold">Problem</div>
               <div className="desc">Some long description can go here that will be really detailed about the specifications of the job that is required.</div>
             </div>
           </div>
           <div className="w-1/3 text-center px-10 rounded p-4">
             <div className="bg-neutral-900 p-4">
               <img src="" alt="" />
-              <div className="title text-lg font-bold">On-Chain</div>
+              <div className="title text-lg font-bold">Solution</div>
               <div className="desc">Some long description can go here that will be really detailed about the specifications of the job that is required.</div>
             </div>
           </div>
           <div className="w-1/3 text-center px-10 rounded p-4">
             <div className="bg-neutral-900 p-4">
               <img src="" alt="" />
-              <div className="title text-lg font-bold">On-Chain</div>
+              <div className="title text-lg font-bold">Problem</div>
               <div className="desc">Some long description can go here that will be really detailed about the specifications of the job that is required.</div>
             </div>
           </div>
