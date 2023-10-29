@@ -119,7 +119,7 @@ const GigPage = () => {
             )
           }
           <Link href="/find">
-            <div className="mt-5 text-gray-500 hover:text-black underline">Back to all Gigs</div>
+            <div className="mt-5 text-neutral-500 hover:text-black underline">Back to all Gigs</div>
           </Link>
         </div>
       </div >

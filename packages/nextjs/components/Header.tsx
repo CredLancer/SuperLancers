@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Bars3Icon, BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, BugAntIcon, MagnifyingGlassIcon, HomeIcon, UserIcon } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
 
@@ -14,9 +14,19 @@ interface HeaderMenuLink {
 
 export const menuLinks: HeaderMenuLink[] = [
   {
+    label: "Home",
+    href: "/",
+    icon: <HomeIcon className="h-4 w-4" />,
+  },
+  {
     label: "Find a Gig",
     href: "/find",
     icon: <MagnifyingGlassIcon className="h-4 w-4" />,
+  },
+  {
+    label: "Prfile",
+    href: "/find",
+    icon: <UserIcon className="h-4 w-4" />,
   },
   {
     label: "Debug",
@@ -61,7 +71,7 @@ export const Header = () => {
   );
 
   return (
-    <div className="sticky lg:static top-0 navbar text-white bg-gray-900 min-h-0 flex-shrink-0 justify-between z-20 shadow-secondary px-0 sm:px-2">
+    <div className="sticky lg:static top-0 navbar text-white bg-neutral-900 min-h-0 flex-shrink-0 justify-between z-20 shadow-secondary px-0 sm:px-2">
       <div className="navbar-start w-auto lg:w-1/2">
         <div className="lg:hidden dropdown" ref={burgerMenuRef}>
           <label
@@ -76,7 +86,7 @@ export const Header = () => {
           {isDrawerOpen && (
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-gray-800 w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral-800 w-52"
               onClick={() => {
                 setIsDrawerOpen(false);
               }}

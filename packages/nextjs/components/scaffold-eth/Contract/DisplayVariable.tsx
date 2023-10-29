@@ -45,7 +45,7 @@ export const DisplayVariable = ({ contractAddress, abiFunction, refreshDisplayVa
           )}
         </button>
       </div>
-      <div className="text-gray-500 font-medium flex flex-col items-start">
+      <div className="text-neutral-500 font-medium flex flex-col items-start">
         <div>
           <div
             className={`break-all block transition bg-transparent ${showAnimation ? "bg-warning rounded-sm animate-pulse-fast" : ""

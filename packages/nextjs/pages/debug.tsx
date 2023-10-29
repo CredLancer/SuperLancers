@@ -36,7 +36,7 @@ const Debug: NextPage = () => {
               <div className="flex flex-row gap-2 w-full max-w-7xl pb-1 px-6 lg:px-10 flex-wrap">
                 {contractNames.map(contractName => (
                   <button
-                    className={`btn btn-primary btn-sm normal-case font-thin ${contractName === selectedContract ? "bg-primary" : "bg-gray-800"
+                    className={`btn btn-primary btn-sm normal-case font-thin ${contractName === selectedContract ? "bg-primary" : "bg-neutral-800"
                       }`}
                     key={contractName}
                     onClick={() => setSelectedContract(contractName)}
@@ -61,7 +61,7 @@ const Debug: NextPage = () => {
         <p className="text-gray">
           You can debug & interact with your deployed contracts here.
           <br /> Check{" "}
-          <code className="italic bg-gray-300 text-base font-bold [word-spacing:-0.5rem] px-1">
+          <code className="italic bg-neutral-300 text-base font-bold [word-spacing:-0.5rem] px-1">
             packages / nextjs / pages / debug.tsx
           </code>{" "}
         </p>

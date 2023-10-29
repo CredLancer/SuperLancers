@@ -55,7 +55,7 @@ export const RainbowKitCustomConnectButton = () => {
                     </label>
                     <ul
                       tabIndex={0}
-                      className="dropdown-content menu p-2 mt-1 bg-gray-200 rounded-box gap-1"
+                      className="dropdown-content menu p-2 mt-1 bg-neutral-200 rounded-box gap-1"
                     >
                       <li>
                         <button
@@ -102,7 +102,7 @@ export const RainbowKitCustomConnectButton = () => {
                     </label>
                     <ul
                       tabIndex={0}
-                      className="dropdown-content menu z-[2] p-2 mt-2 bg-gray-800 rounded-box gap-1"
+                      className="dropdown-content menu z-[2] p-2 mt-2 bg-neutral-800 rounded-box gap-1"
                     >
                       <li>
                         {addressCopied ? (

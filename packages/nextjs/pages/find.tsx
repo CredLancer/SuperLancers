@@ -44,7 +44,7 @@ const Home: NextPage = () => {
         <div className=" flex justify-between items-center">
           <div className="text-4xl font-bold">Find a Gig</div>
           <Link href="/gigs/create">
-            <div className="button bg-black text-white hover:opacity-50 p-3 w-fit px-10 rounded">Create New Gig</div>
+            <div className="button bg-primary font-bold text-white hover:opacity-50 p-3 w-fit px-10 rounded">Create New Gig</div>
           </Link>
         </div>
         <br />

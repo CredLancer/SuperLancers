@@ -2,7 +2,7 @@ export const Spinner = ({ width, height }: { width?: string; height?: string }) 
   return (
     <svg
       aria-hidden="true"
-      className="mr-2 w-6 h-6 text-gray-200 dark:text-gray-300 animate-spin fill-primary-focus"
+      className="mr-2 w-6 h-6 text-neutral-200 dark:text-neutral-300 animate-spin fill-primary-focus"
       style={{
         width,
         height,
