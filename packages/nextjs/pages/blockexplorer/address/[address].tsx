@@ -65,7 +65,7 @@ const AddressPage = ({ address, contractData }: PageProps) => {
       </div>
       <div className="col-span-5 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
         <div className="col-span-1 flex flex-col">
-          <div className="bg-neutral-100 border-neutral-300 border shadow-md shadow-secondary rounded-3xl px-6 lg:px-8 mb-6 space-y-1 py-4 overflow-x-auto">
+          <div className="bg-gray-100 border-gray-300 border shadow-md shadow-secondary rounded-3xl px-6 lg:px-8 mb-6 space-y-1 py-4 overflow-x-auto">
             <div className="flex">
               <div className="flex flex-col gap-1">
                 <Address address={address} format="long" />

@@ -15,7 +15,7 @@ interface HeaderMenuLink {
 export const menuLinks: HeaderMenuLink[] = [
   {
     label: "Find a Gig",
-    href: "/",
+    href: "/find",
     icon: <MagnifyingGlassIcon className="h-4 w-4" />,
   },
   {
@@ -37,7 +37,7 @@ export const HeaderMenuLinks = () => {
               href={href}
               passHref
               className={`${isActive ? "bg-secondar" : ""
-                }  hover focus:!bg-secondary active:!text-black py-1.5 px-3 text-sm gap-2 grid grid-flow-col`}
+                }  hover focus:!bg-secondary active:!text-white py-1.5 px-3 text-sm gap-2 grid grid-flow-col`}
             >
               {icon}
               <span>{label}</span>
@@ -61,7 +61,7 @@ export const Header = () => {
   );
 
   return (
-    <div className="sticky lg:static top-0 navbar text-black bg-neutral-100 min-h-0 flex-shrink-0 justify-between z-20 shadow-secondary px-0 sm:px-2">
+    <div className="sticky lg:static top-0 navbar text-white bg-gray-900 min-h-0 flex-shrink-0 justify-between z-20 shadow-secondary px-0 sm:px-2">
       <div className="navbar-start w-auto lg:w-1/2">
         <div className="lg:hidden dropdown" ref={burgerMenuRef}>
           <label
@@ -76,7 +76,7 @@ export const Header = () => {
           {isDrawerOpen && (
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral-100 w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-gray-800 w-52"
               onClick={() => {
                 setIsDrawerOpen(false);
               }}

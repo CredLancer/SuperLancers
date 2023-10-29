@@ -48,9 +48,8 @@ export const DisplayVariable = ({ contractAddress, abiFunction, refreshDisplayVa
       <div className="text-gray-500 font-medium flex flex-col items-start">
         <div>
           <div
-            className={`break-all block transition bg-transparent ${
-              showAnimation ? "bg-warning rounded-sm animate-pulse-fast" : ""
-            }`}
+            className={`break-all block transition bg-transparent ${showAnimation ? "bg-warning rounded-sm animate-pulse-fast" : ""
+              }`}
           >
             {displayTxResult(result)}
           </div>

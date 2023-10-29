@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import NextNProgress from "nextjs-progressbar";
 import { Toaster } from "react-hot-toast";
@@ -30,8 +30,9 @@ const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
       <RainbowKitProvider
         chains={appChains.chains}
         avatar={BlockieAvatar}
+        theme={darkTheme()}
       >
-        <div className="flex flex-col min-h-screen bg-white text-black">
+        <div className="flex flex-col min-h-screen bg-black text-white">
           <Header />
           <main className="relative flex flex-col flex-1">
             <Component {...pageProps} />
