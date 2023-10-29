@@ -33,7 +33,7 @@ const Home: NextPage = () => {
   //   client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
   // }];
 
-  const gigListingComponents = gigsList && gigsList.sort((a, b) => a.status - b.status).map((g, i) => <GigListing {...g} key={i} />);
+  const gigListingComponents = gigsList && gigsList.slice().sort((a: any, b: any) => a.status - b.status).map((g: any, i: any) => <GigListing {...g} key={i} />);
 
   console.log({ gigsList })
 
