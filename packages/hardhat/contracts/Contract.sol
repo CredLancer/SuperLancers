@@ -9,7 +9,7 @@ contract GigMarketplace is Ownable, Pausable {
 		Available,
 		Accepted,
 		Finished,
-    Approved
+		Approved
 	}
 
 	struct Gig {
@@ -18,6 +18,7 @@ contract GigMarketplace is Ownable, Pausable {
 		address freelancer;
 		string title;
 		string description;
+		string timeline;
 		uint256 reward;
 		GigStatus status;
 	}
@@ -30,6 +31,7 @@ contract GigMarketplace is Ownable, Pausable {
 		address indexed creator,
 		string title,
 		string description,
+		string timeline,
 		uint256 reward
 	);
 	event GigAccepted(uint256 indexed gigId, address indexed freelancer);
@@ -43,6 +45,7 @@ contract GigMarketplace is Ownable, Pausable {
 	function createGig(
 		string memory title,
 		string memory description,
+		string memory timeline,
 		uint256 reward
 	) public whenNotPaused {
 		uint256 gigId = ++totalGigs;
@@ -52,10 +55,18 @@ contract GigMarketplace is Ownable, Pausable {
 			freelancer: address(0),
 			title: title,
 			description: description,
+			timeline: timeline,
 			reward: reward,
 			status: GigStatus.Available
 		});
-		emit GigCreated(gigId, msg.sender, title, description, reward);
+		emit GigCreated(
+			gigId,
+			msg.sender,
+			title,
+			description,
+			timeline,
+			reward
+		);
 	}
 
 	function listGigs() public view returns (Gig[] memory) {
@@ -113,5 +124,10 @@ contract GigMarketplace is Ownable, Pausable {
 			result[j] = availableGigs[j];
 		}
 		return result;
+	}
+
+	function getGigById(uint256 gigId) public view returns (Gig memory) {
+		require(gigId > 0 && gigId <= totalGigs, "Invalid Gig ID");
+		return gigs[gigId];
 	}
 }

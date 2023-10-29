@@ -1,16 +1,41 @@
 import Link from "next/link";
-import { NextPage } from "next";
+import { useRouter } from 'next/router'
 import { MetaHeader } from "~~/components/MetaHeader";
-import { GigListing } from "~~/components/GigListing";
+import { useScaffoldContractWrite } from "~~/hooks/scaffold-eth/useScaffoldContractWrite";
+import { useScaffoldContractRead } from "~~/hooks/scaffold-eth/useScaffoldContractRead";
 
 const GigPage = () => {
-  const gig = {
-    title: "Create Figma Designs for Web Applications",
-    description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
-    reward: "5 ETH",
-    timeline: "2 weeks",
-    client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
-  };
+  const router = useRouter();
+
+  const { data: gig } = useScaffoldContractRead({
+    contractName: "GigMarketplace",
+    functionName: "getGigById",
+    args: [router.query.id]
+  });
+
+  console.log({ gig })
+
+  const states = ["Available", "Accepted", "Finsihed", "Approved"]
+
+
+  const { writeAsync, isLoading, isMining } = useScaffoldContractWrite({
+    contractName: "GigMarketplace",
+    functionName: "claimAndStartGig",
+    blockConfirmations: 1,
+    onBlockConfirmation: txnReceipt => {
+      console.log("Transaction blockHash", txnReceipt.blockHash);
+    },
+  });
+
+  // const gig = {
+  //   title: "Create Figma Designs for Web Applications",
+  //   description: "Some long ass description can go here that will be really detailed about the specifications of the job that is required.",
+  //   reward: "5 ETH",
+  //   timeline: "2 weeks",
+  //   client: "0x9853434112De1B46B19d9D4495d47A21fA6c7B8e"
+  // };
+
+  if (!gig) return <></>
 
   return (
     <>
@@ -26,11 +51,11 @@ const GigPage = () => {
           </div>
           <div className="flex items-center">
             <div className="flex flex-col items-center mx-10">
-              <div className="text-2xl font-bold">Unclaimed</div>
+              <div className="text-2xl font-bold">{states[gig.status]}</div>
               <div className="tracking-widest font-medium text-sm">STATUS</div>
             </div>
             <div className="flex flex-col items-center mx-10">
-              <div className="text-2xl font-bold">{gig.reward}</div>
+              <div className="text-2xl font-bold">{gig.reward.toString()} FLR</div>
               <div className="tracking-widest font-medium text-sm">REWARD</div>
             </div>
             <div className="flex flex-col items-center ml-10">
@@ -41,7 +66,7 @@ const GigPage = () => {
         </div>
         <hr className="my-10" />
         <div className="w-100 text-center flex flex-col items-center">
-          <div className="button bg-black text-white hover:opacity-50 p-3 w-fit px-10 rounded">Claim & Start Gig</div>
+          <div className="button bg-black text-white hover:opacity-50 p-3 w-fit px-10 rounded" onClick={writeAsync}>Claim & Start Gig</div>
           <Link href="/">
             <div className="mt-5 text-neutral-500 hover:text-black underline">Back to all Gigs</div>
           </Link>
