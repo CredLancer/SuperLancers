@@ -1,14 +1,12 @@
 import Link from "next/link";
 import type { NextPage } from "next";
 import { MetaHeader } from "~~/components/MetaHeader";
-import { GigListing } from "~~/components/GigListing";
-import { useScaffoldContractRead } from "~~/hooks/scaffold-eth/useScaffoldContractRead";
 
 const Home: NextPage = () => {
   // const { data: gigsList } = useScaffoldContractRead({
   //   contractName: "GigMarketplace",
   //   functionName: "listGigs",
-  // });
+  // });  
 
   // const gigs = [{
   //   id: 1,

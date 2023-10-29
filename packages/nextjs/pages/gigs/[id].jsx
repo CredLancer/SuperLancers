@@ -60,7 +60,7 @@ const GigPage = () => {
         gig.status === 2 &&
         (
           <>
-            <div className="mb-3">You've marked this gig as complete, please wait for the gig owner to approve your work.</div>
+            <div className="mb-3">You&apos;ve marked this gig as complete, please wait for the gig owner to approve your work.</div>
           </>
         )
       }
