@@ -63,13 +63,13 @@ const Home: NextPage = () => {
             <div className="">
               <ExclamationTriangleIcon className="w-1/5 text-primary" />
               <div className="title text-lg font-bold mt-3 mb-1">The Problem</div>
-              <div className="desc">There are currently tons of <b>fake credentials</b> on professional networks, it's difficult to match the <b>right talent</b>, and existing gig marketplaces are completely <b>centalized.</b></div>
+              <div className="desc">There are currently tons of <b>fake credentials</b> on professional networks, it&apos;s difficult to match the <b>right talent</b>, and existing gig marketplaces are completely <b>centalized.</b></div>
             </div>
           </div>
           <div className="w-1/4 rounded p-4">
             <div className="">
               <LightBulbIcon className="w-1/5 text-primary" />
-              <div className="title text-lg font-bold mt-3 mb-1">SuperLancer's Solution</div>
+              <div className="title text-lg font-bold mt-3 mb-1">SuperLancer&apos;s Solution</div>
               <div className="desc">Our game-changing solution maximizes trust and efficiency in the gig economy. Leveraging smart credentials and an integrated web platform.</div>
             </div>
           </div>
