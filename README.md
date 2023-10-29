@@ -51,7 +51,6 @@ These features work cohesively to redefine the future of on-chain work environme
 
   
 #### How it works
-TODO:
 1. 
     1. A Freelancer creates an ID using **TalentLayerID, we hope to integrate ENS** 
     2. Both Organizations and Freelancers will have a **Railgun** wallet to preserve privacy of transactions
@@ -75,14 +74,5 @@ TODO:
 
 ----------------------------------------------------------------
 
-## Demo/ Gallery 
-
-![Alt text](assets/image-6.png)
-![Alt text](assets/image-1.png)
-![Alt text](assets/image-2.png)
-![Alt text](assets/image-3.png)
-![Alt text](assets/image-4.png)
-![Alt text](assets/image-5.png)
------------------
 SuperLancersZK is leading the way in reimagining the freelancing landscape by prioritizing privacy, accuracy, and user experience. Join us on this innovative journey as we revolutionize on-chain work environments and empower users with a trustless, private, and secure platform.
 
