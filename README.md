@@ -19,9 +19,9 @@ All these features work well together to create a reimagined workplace for the o
 
 40% of people lie on their resumes, and three out of four employers have caught a lie on someone's resume. With on-chain actions in SuperLancersZK leaving a digital trail for everyone's skills and activities, people can make sure that user profiles are always accurate and truthful.
 
-Discovering talent online and finding the right person to do a task for you is not always easy; however, SuperLancersZK facilitates talent matching by creating an evidence-backed standard.
+Discovering talent online and finding the right person to do a task for you is not always easy. SuperLancersZK facilitates talent matching by introducing an evidence-backed standard.
 
-The existing prominent gig marketplaces are centralized, which could lead to concerns surrounding the public disclosure of one's income and personal information. SuperLancersZK addresses and resolves this particular challenge using **Scaffold-Eth**'s decentralizing technology.
+The existing prominent gig marketplaces are centralized, which could lead to concerns surrounding the public disclosure of one's income and personal information. SuperLancersZK addresses and resolves this particular challenge by offering a decentralised gig marketplace.
 
 
 
