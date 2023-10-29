@@ -3,6 +3,7 @@
 ## Project Description
 SuperLancersZK is a pioneering on-chain freelancing platform that offers a solution for tapping into the talent market, featuring decentralized private payments and verifiable credentials.
 
+Live Demo: superlancers-ruiyigan.vercel.app
 
 ## Unique Value Proposition
 
@@ -86,3 +87,4 @@ TODO:
 -----------------
 SuperLancersZK is leading the way in reimagining the freelancing landscape by prioritizing privacy, accuracy, and user experience. Join us on this innovative journey as we revolutionize on-chain work environments and empower users with a trustless, private, and secure platform.
 
+https://github.com/ojasarora77/super-lancers-token
