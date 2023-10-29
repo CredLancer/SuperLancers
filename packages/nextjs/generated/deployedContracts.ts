@@ -2528,11 +2528,7 @@ const contracts = {
           ],
         },
         GigMarketplace: {
-<<<<<<< HEAD
-          address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-=======
           address: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
->>>>>>> 55638c07157425f05b3682ad28f2926aa24ef083
           abi: [
             {
               inputs: [],
