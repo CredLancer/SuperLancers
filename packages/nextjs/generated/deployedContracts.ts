@@ -1929,7 +1929,7 @@ const contracts = {
       name: "localhost",
       contracts: {
         CredentialToken: {
-          address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+          address: "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
           abi: [
             {
               inputs: [],
@@ -2208,7 +2208,7 @@ const contracts = {
                   type: "address",
                 },
               ],
-              name: "getAllGigIdsByAddress",
+              name: "getAllMintedGigIdsByAddress",
               outputs: [
                 {
                   internalType: "uint256[]",
@@ -2331,19 +2331,6 @@ const contracts = {
                   internalType: "bool",
                   name: "",
                   type: "bool",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "length",
-              outputs: [
-                {
-                  internalType: "uint256",
-                  name: "",
-                  type: "uint256",
                 },
               ],
               stateMutability: "view",
@@ -2541,7 +2528,7 @@ const contracts = {
           ],
         },
         GigMarketplace: {
-          address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+          address: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
           abi: [
             {
               inputs: [],
@@ -3072,12 +3059,50 @@ const contracts = {
                   type: "address",
                 },
               ],
-              name: "getAllGigIdsByAddress",
+              name: "getAllMintedGigDescriptionsByAddress",
+              outputs: [
+                {
+                  internalType: "string[]",
+                  name: "",
+                  type: "string[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+              ],
+              name: "getAllMintedGigIdsByAddress",
               outputs: [
                 {
                   internalType: "uint256[]",
                   name: "",
                   type: "uint256[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+              ],
+              name: "getAllMintedGigTitlesByAddress",
+              outputs: [
+                {
+                  internalType: "string[]",
+                  name: "",
+                  type: "string[]",
                 },
               ],
               stateMutability: "view",
@@ -3310,19 +3335,6 @@ const contracts = {
                   internalType: "bool",
                   name: "",
                   type: "bool",
-                },
-              ],
-              stateMutability: "view",
-              type: "function",
-            },
-            {
-              inputs: [],
-              name: "length",
-              outputs: [
-                {
-                  internalType: "uint256",
-                  name: "",
-                  type: "uint256",
                 },
               ],
               stateMutability: "view",

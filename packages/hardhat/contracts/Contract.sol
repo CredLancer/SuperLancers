@@ -132,4 +132,28 @@ contract GigMarketplace is Ownable, Pausable, CredentialToken {
 		require(gigId > 0 && gigId <= totalGigs, "Invalid Gig ID");
 		return gigs[gigId];
 	}
+
+  function getAllMintedGigTitlesByAddress(address account) public view returns (string[] memory) {
+        uint256[] memory gigIds = getAllMintedGigIdsByAddress(account);
+        string[] memory gigTitles = new string[](gigIds.length);
+
+        for (uint256 i = 0; i < gigIds.length; i++) {
+            Gig storage gig = gigs[gigIds[i]];
+            gigTitles[i] = gig.title;
+        }
+
+        return gigTitles;
+    }
+
+  function getAllMintedGigDescriptionsByAddress(address account) public view returns (string[] memory) {
+        uint256[] memory gigIds = getAllMintedGigIdsByAddress(account);
+        string[] memory gigDescriptions = new string[](gigIds.length);
+
+        for (uint256 i = 0; i < gigIds.length; i++) {
+            Gig storage gig = gigs[gigIds[i]];
+            gigDescriptions[i] = gig.description;
+        }
+
+        return gigDescriptions;
+    }
 }
