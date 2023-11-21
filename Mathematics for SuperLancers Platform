@@ -1,0 +1,10 @@
+Skill Matching Score = Min(100, L × E × M)
+  Min means taking the smaller value of the two items.
+    L is the score for "programming languages used", from 0 to 10;
+      This is relevant to the number of programming languages used.
+    E is the score for "experience", from 0.5 to 20;
+      This is relevant to the number of programs worked.
+    M is the score for "motivation", from 0.375 to 1.5.
+      This is relevant to the number of updates of the programs.
+
+More details on https://www.notion.so/Details-77158d571b654765bc1baaa41c3eded7?pvs=4.
